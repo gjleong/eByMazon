@@ -1,0 +1,98 @@
+﻿CREATE DATABASE Winenbuy;
+
+
+CREATE TABLE Users{
+        userID INTEGER AUTO INCREMENT PRIMARY KEY,
+        username VARCHAR(256) NOT NULL UNIQUE,
+        password VARCHAR(256),
+        full_name VARCHAR(256),
+        phone INTEGER,
+        credit# INTEGER,
+        Type VARCHAR(256)
+}
+
+
+CREATE TABLE Items{
+        itemID INTEGER AUTO INCREMENT PRIMARY KEY,
+        title VARCHAR(256),
+        key_words VARCHAR(256),
+        price_nature VARCHAR(256),
+        pic  VARCHAR(256)
+}
+
+
+;***** Super users can deny (remove) and accept (no action) items on their interface *****
+
+
+CREATE TABLE Strikes{
+        strikeID INTEGER PRIMARY KEY AUTO INCREMENT,
+        userID INTEGER NOT NULL, 
+        count INTEGER DEFAULT 0,
+        Type VARCHAR(256)
+} 
+
+
+CREATE TABLE Complaints{
+        complaintID INTEGER PRIMARY KEY AUTO INCREMENT, 
+        complainerID VARCHAR(256) NOT NULL,
+        userID VARCHAR(256) NOT NULL
+}
+
+
+CREATE TABLE Bids{
+        bidID INTEGER PRIMARY KEY AUTO INCREMENT,
+        itemID INTEGER NOT NULL,
+        userID INTEGER NOT NULL
+}
+
+
+CREATE TABLE Ratings{
+        ratingID INTEGER PRIMARY KEY AUTO INCREMENT,
+        raterID INTEGER NOT NULL,
+        userID INTEGER NOT NULL, 
+        rank INTEGER
+}
+
+
+
+
+
+
+
+
+
+
+_________________________Users_________________________
+userID
+username
+password
+full_name
+phone 
+credit# 
+Type
+
+
+_________________________Strike_________________________
+strikeID
+userID
+count
+type (type could be taboo, rating, complaints
+
+
+______________________Complaints______________________
+complaintID
+complainerID
+userID
+
+
+_________________________Bids_________________________
+bidID
+itemID
+userID
+
+
+________________________Ratings________________________
+ratingID
+raterID
+userID
+rank
