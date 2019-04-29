@@ -7,6 +7,8 @@ Choux Cream (Assigned Team #2)
 import jinja2
 import os
 import webapp3
+from paste import httpserver
+
 # for unique user id with id = uuid.uuid4()
 #import uuid
 # parse urls
@@ -14,7 +16,7 @@ import webapp3
 #import logging
 
 # will we need these?
-#import requests
+import requests
 #from BeautifulSoup import BeautifulSoup
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -62,7 +64,7 @@ class Listing:
     def GetSellerID(self):
         return self.seller_id
     def GetProductID(self):
-        return product_id
+        return self.product_id
     def GetPrice(self):
         return self.price
     def CanBuyNow(self):
@@ -152,31 +154,64 @@ class RegisterHandler(webapp3.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/register.html')
         self.response.write(template.render())
-    def register(self):
+#    def register(self):
+##        params = requests.get(url, )
+#        name = self.request.form['name']
+#        email = self.request.form['email']
+#        phone_number = self.request.form['phone_number']
+#        address = self.request.form['address']
+#        credit_card = self.request.form['credit_card']
+#        
+#        # generate random key
+#        key = "63165165213265"
+#        ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
+#        
+#        # if approved then we will make an OU from this information
+##        ou_applicant = {
+##                'name': name,
+##                'email': email,
+##                'phone_number': phone_number,
+##                'address': address,
+##                'credit_card': credit_card
+##        }
+#        
+#        APPLICATIONS.update({key: ou_applicant})
+#        
+##        ou_applicant_key = ou_applicant.put()
+#        template = jinja_environment.get_template('templates/confirmation.html')
+#        self.response.write(template.render())
+
+
+
+    def post(self):
         name = self.request.get('name')
         email = self.request.get('email')
         phone_number = self.request.get('phone_number')
         address = self.request.get('address')
         credit_card = self.request.get('credit_card')
+        data = {'name': name, 'email': email, 'phone_number': phone_number,
+                'address': address, 'credit_card': credit_card, 'signup': 'submit'}
         
         # generate random key
         key = "63165165213265"
-        ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
+#        ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
         
         # if approved then we will make an OU from this information
-#        ou_applicant = {
-#                'name': name,
-#                'email': email,
-#                'phone_number': phone_number,
-#                'address': address,
-#                'credit_card': credit_card
-#        }
+        ou_applicant = {
+                'name': name,
+                'email': email,
+                'phone_number': phone_number,
+                'address': address,
+                'credit_card': credit_card
+        }
         
         APPLICATIONS.update({key: ou_applicant})
         
 #        ou_applicant_key = ou_applicant.put()
-        template = jinja_environment.get_template('templates/index.html')
+        requests.post('https://gjleong.github.io/eByMazon', data=data)
+        template = jinja_environment.get_template('templates/confirmation.html')
         self.response.write(template.render())
+#        print(APPLICATIONS)
 
 class ConfirmationHandler(webapp3.RequestHandler):
     def get(self):
@@ -199,13 +234,18 @@ app = webapp3.WSGIApplication([
         ('/register', RegisterHandler),
         ('/confirmation', ConfirmationHandler),
 #        ('/user/([0-9]+))/settings', SettingsHandler),
-#        ('/superuser', SuperUserHandler)
+#        ('/superuser', SuperUserHandler),
+#        ('/error', ErrorPageHandler),
         ], debug = True)
-#app.config['SERVER_NAME'] = 'https://gjleong.github.io/eByMazon'
+#domain = "gjleong.github.io"
+#app.config['SERVER_NAME'] = domain
 
 def main():
-    from paste import httpserver
-    httpserver.serve(app, host='127.0.0.1', port=8080)
+    httpserver.serve(app, host='127.0.0.1', port=4460)
+    
+# we don't necessarily want to shut down the application
+#def fin():
+#    app.shutdown()
 
 if __name__ == '__main__':
     main()

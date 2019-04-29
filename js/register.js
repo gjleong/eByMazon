@@ -7,7 +7,7 @@ function submit_clicked(event){
   event.preventDefault();
   var content = $('{{ user_info }}').val();
   $.post(
-    '/home/.*',
+    '/confirmation.*',
     content,
     handle_response
   );
