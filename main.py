@@ -8,21 +8,22 @@ import jinja2
 import os
 import webapp3
 from paste import httpserver
+import requests
 
+# for data storage and encryption: make it non-human readable since
+# we are storing user information 
+import pickle
 # for unique user id with id = uuid.uuid4()
 #import uuid
 # parse urls
 #import urllib.parse
 #import logging
 
-# will we need these?
-import requests
-#from BeautifulSoup import BeautifulSoup
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 # user databases will be stored as either files or dictionaries
-
+# pickle and load
 LISTINGS = {}    
 APPLICATIONS = {}
 LOGIN = {}
@@ -154,35 +155,6 @@ class RegisterHandler(webapp3.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/register.html')
         self.response.write(template.render())
-#    def register(self):
-##        params = requests.get(url, )
-#        name = self.request.form['name']
-#        email = self.request.form['email']
-#        phone_number = self.request.form['phone_number']
-#        address = self.request.form['address']
-#        credit_card = self.request.form['credit_card']
-#        
-#        # generate random key
-#        key = "63165165213265"
-#        ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
-#        
-#        # if approved then we will make an OU from this information
-##        ou_applicant = {
-##                'name': name,
-##                'email': email,
-##                'phone_number': phone_number,
-##                'address': address,
-##                'credit_card': credit_card
-##        }
-#        
-#        APPLICATIONS.update({key: ou_applicant})
-#        
-##        ou_applicant_key = ou_applicant.put()
-#        template = jinja_environment.get_template('templates/confirmation.html')
-#        self.response.write(template.render())
-
-
-
     def post(self):
         name = self.request.get('name')
         email = self.request.get('email')
@@ -193,30 +165,31 @@ class RegisterHandler(webapp3.RequestHandler):
                 'address': address, 'credit_card': credit_card, 'signup': 'submit'}
         
         # generate random key
+        # check that key does not already exist in db
         key = "63165165213265"
-#        ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
+        ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
         
         # if approved then we will make an OU from this information
-        ou_applicant = {
-                'name': name,
-                'email': email,
-                'phone_number': phone_number,
-                'address': address,
-                'credit_card': credit_card
-        }
+        # for human readable testing purposes
+#        ou_applicant = {
+#                'name': name,
+#                'email': email,
+#                'phone_number': phone_number,
+#                'address': address,
+#                'credit_card': credit_card
+#        }
         
         APPLICATIONS.update({key: ou_applicant})
         
 #        ou_applicant_key = ou_applicant.put()
         requests.post('https://gjleong.github.io/eByMazon', data=data)
-        template = jinja_environment.get_template('templates/confirmation.html')
-        self.response.write(template.render())
-#        print(APPLICATIONS)
+        self.redirect('/confirmation')
 
 class ConfirmationHandler(webapp3.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/confirmation.html')
         self.response.write(template.render())
+    
 
 app = webapp3.WSGIApplication([
         ('/', MainHandler),
@@ -236,16 +209,65 @@ app = webapp3.WSGIApplication([
 #        ('/user/([0-9]+))/settings', SettingsHandler),
 #        ('/superuser', SuperUserHandler),
 #        ('/error', ErrorPageHandler),
-        ], debug = True)
+        ], debug=True)
 #domain = "gjleong.github.io"
 #app.config['SERVER_NAME'] = domain
 
 def main():
-    httpserver.serve(app, host='127.0.0.1', port=4460)
+    # initialize users when starting up the server
+    try:
+        with open("listings.txt", "rb") as handle:
+            global LISTINGS
+            LISTINGS = pickle.loads(handle.read())
+    except EOFError as e:
+        pass
+    try:
+        with open("applications.txt", "rb") as handle:
+            global APPLICATIONS
+            APPLICATIONS = pickle.loads(handle.read())
+    except EOFError as e:
+        pass
+    try:
+        with open("login.txt", "rb") as handle:
+            global LOGIN
+            LOGIN = pickle.loads(handle.read())
+    except EOFError as e:
+        pass
+    try:
+        with open("ordinary_users.txt", "rb") as handle:
+            global ORDINARY_USERS
+            ORDINARY_USERS = pickle.loads(handle.read())
+    except EOFError as e:
+        pass
+    try:
+        with open("super_users.txt", "rb") as handle:
+            global SUPER_USERS
+            SUPER_USERS = pickle.loads(handle.read())
+    except EOFError as e:
+        pass
+#    global app
+#    app.run()
+    httpserver.serve(app, host='127.0.0.1', port=4461)
     
 # we don't necessarily want to shut down the application
-#def fin():
-#    app.shutdown()
+def fin():
+    global app
+    app.shutdown()
+    with open("listings.txt", "wb") as handle:
+        global LISTINGS
+        pickle.dump(LISTINGS, handle)
+    with open("applications.txt", "wb") as handle:
+        global APPLICATIONS
+        pickle.dump(APPLICATIONS, handle)
+    with open("login.txt", "wb") as handle:
+        global LOGIN
+        pickle.dump(LOGIN, handle)
+    with open("ordinary_users.txt", "wb") as handle:
+        global ORDINARY_USERS
+        pickle.dump(ORDINARY_USERS, handle)
+    with open("super_users.txt", "wb") as handle:
+        global SUPER_USERS
+        pickle.dump(SUPER_USERS, handle)
 
 if __name__ == '__main__':
     main()
