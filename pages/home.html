@@ -60,12 +60,23 @@
 
             .dropdown-content {
                 display: none;
-                position: center;
+                position: absolute;
                 background-color: #f9f9f9;
                 min-width: 160px;
                 box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
                 padding: 12px 16px;
-                z-index: 1;
+                z-index: 100;
+                right:0;
+            }
+
+            .dropdown-content2 {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
             }
 
             .dropdown:hover .dropdown-content {
@@ -73,7 +84,7 @@
                 
             }
 
-            .dropdown2:hover .dropdown-content {
+            .dropdown2:hover .dropdown-content2 {
                 display: block;
             }
             
@@ -115,7 +126,7 @@
         <div class="nav-bar">
             <div class="dropdown2">
                 <a href="#"><img src="img/category.png" class="img-responsive" alt="category"></a>
-                <div class="dropdown-content">
+                <div class="dropdown-content2">
                     <li><a href="#All" >      All Departments    </a></li>
                     <li><a href="#Cloth" >      Clothing         </a></li>
                     <li><a href="#Tech" >      Technology        </a></li>
