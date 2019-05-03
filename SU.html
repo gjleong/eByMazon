@@ -29,27 +29,19 @@ background: #EFB2B2;
 			line-height: 90px;/* identical to box height */
 			float: center;
             text-align:center;
-
 			color: #000000;
 			}
 			
             *{
             box-sizing: boarder box;
             }
-            .navbar {
-  			width: 100%;
-  			background-color: #EFB2B2;
-  			overflow: auto;
-  			text-decoration: none;
-  		}
-
+            
          .left {
          	position: absolute;
 			left: 6.88%;
 			right: 70.82%;
 			top: 41.1%;
 			bottom: 45.94%;
-
 			background: #856565;
             padding: 50px;
             text-align:center;
@@ -57,7 +49,6 @@ background: #EFB2B2;
             font-size:25px;
             color:#000000;
             text-decoration: none;
-
          	}
           .middle {
           	position: absolute;
@@ -65,7 +56,6 @@ background: #EFB2B2;
 			right: 38.81%;
 			top: 41.1%;
 			bottom: 45.94%;
-
 			background: #856565;
             padding: 50px;
             text-align:center;
@@ -81,7 +71,6 @@ background: #EFB2B2;
 			right: 5.87%;
 			top: 41.1%;
 			bottom: 45.94%;
-
 			background: #856565;
             padding: 50px;
             text-align:center;
@@ -151,7 +140,6 @@ background: #EFB2B2;
        	color:#000000;
        	 }
        	 .ps {
-
        	 	position: absolute;
 			left: 0.0001%;
 			right: 50.56%;
@@ -164,7 +152,6 @@ background: #EFB2B2;
 			padding: 15px;
 			color: #000000;
 		}
-
 			.rr {
 				position: absolute;
 				left: 10.3%;
@@ -182,7 +169,6 @@ background: #EFB2B2;
 				text-decoration-line: none;
 				color: #000000;
 			}
-
 				.career {
 					position: absolute;
 					left: 60.71%;
@@ -199,7 +185,6 @@ background: #EFB2B2;
 					text-decoration-line: none;
 					color: #000000;
 				}
-
 				.contact {
 					position: absolute;
 					left: 85.8%;
@@ -216,10 +201,29 @@ background: #EFB2B2;
 					color: #000000;
 					padding: 15px;
 				}
-				.active {
-  				background-color: #EFB2B2;
+				ul {
+  					list-style-type: none;
+  					margin: 0;
+  					padding: 0;
+  					overflow: hidden;
+  					background-color: #333;
 				}
 
+				li {
+  					float: right;
+					}
+
+				li a {
+ 					 display: block;
+  					 color: white;
+  					 text-align: center;
+  					 padding: 14px 16px;
+  					 text-decoration: none;
+					 }
+
+				li a:hover {
+  					 background-color: #111;
+ 					}
           
 </style>
 </head>
@@ -230,12 +234,13 @@ right: .770%;
 top: -10.95%;
 bottom: 40.95%;"/>
 
-<div class="navbar">
-  <a class="active" href="#"><i class="fa fa-fw fa-bars"></i> Menu</a> 
-  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
-  <a href="#"><i class="far fa-comment-alt"></i> Messaging</a> 
-  <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-</div>
+<ul>
+  <li style = "text-decoration: none; color: #7a0000; font-size: 40px;float: left"><a class="active" href="#"><i class="fa fa-fw fa-bars"></i> Menu</a> </li>
+  <li><a style = " font-size: 40px;;" href="#"><i class="fa fa-fw fa-user"></i> Login</a></li>
+ <li> <a style = "  font-size: 40px;" href="#"><i class="far fa-comment-alt"></i> Messaging</a> </li>
+  <li><a style = "  font-size: 40px;" href="#"><i class="fa fa-fw fa-search"></i> Search</a></li>
+
+</ul>
 
 
 <div class= "heading">
