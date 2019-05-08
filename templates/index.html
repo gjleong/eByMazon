@@ -6,17 +6,95 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .home-bar{
+                background-color: rgba(111, 0, 255, 0.486);
+            }
+            .nav-bar{
+                background-color: rgba(111, 0, 255, 0.267);
+            }
+            
+            .img-responsive {
+                width: 40px;
+                height: 40px;
+                background-position: center center;
+                vertical-align: middle;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 1;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            
+        </style>
+
+    <meta charset="utf-8">
+
 </head>
 <body>
-    <h1>Wine n' Buy</h1>
-    <p>Welcome!</p>
-    <div class="top-nav-bar">
-        <div class="search-box">
-        <!---img src="images/logo.png"--->
-        <input type=text class="form-control">
+
+    <div class="home-bar">
         
-        <span class="input-group-text"></span>
+        <div class="dropdown">
+            <a href="#"><img src="img/avatar.png" class="img-responsive" alt="avatar"></a>
+            <div class="dropdown-content">
+                <li><a href="#Acct" >      Account Info    </a></li>
+                <li><a href="#ItemForm" >  New Item Form   </a></li>
+                <li><a href="#Settings">   Settings        </a></li>
+                <li><a href="#SignOut">    Sign Out        </a></li>
+            </div>
+        </div>
+        
+        <a href="#"><img src="img/logo.jpg" class="img-responsive" alt="logo" align="right"></a>
+        <center><font size="6" face="Georgia">WINE N BUY</font></center>
+
     </div>
+
+    <div class="nav-bar">
+        
+        <div class="dropdown">
+            <a href="#"><img src="img/category.png" class="img-responsive" alt="category"></a>
+            <div class="dropdown-content">
+                <li><a href="#All" >      All Departments    </a></li>
+                <li><a href="#Cloth" >      Clothing         </a></li>
+                <li><a href="#Tech" >      Technology        </a></li>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <form id="form1">
+                <input type="text" placeholder="Search.." name="search">
+                <button id="submit-button">Submit</button>
+            </form>
+            
+            <script type="text/javascript">
+                document.getElementById("submit-button").onclick = function() {
+                    document.getElementById("form1").submit();
+                }
+            </script>
+        </div>
+
+
+    </div>
+
+   
+
+       
+
     <div class="clearfix">
       <button onclick="window.location.href = 'register'" type="button" class="registerbtn">Sign Up</button>
     </div>

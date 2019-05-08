@@ -7,14 +7,18 @@ Choux Cream (Assigned Team #2)
 import jinja2
 import os
 import webapp3
-from paste import httpserver
+#from paste import httpserver
+from wsgiref.util import setup_testing_defaults
+from wsgiref.simple_server import make_server
 import requests
 
 # for data storage and encryption: make it non-human readable since
 # we are storing user information 
 import pickle
 # for unique user id with id = uuid.uuid4()
-#import uuid
+# uuid4 is more secure than uuid1
+# UUID('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX') where X's are hex values
+import uuid
 # parse urls
 #import urllib.parse
 #import logging
@@ -36,7 +40,9 @@ def GetMostPopularOUs():
     return 'popular OUs'
 
 '''
-Product objects to sell
+###############################################################################
+PRODUCTS AND LISTINGS
+###############################################################################
 '''
 class Product:
 
@@ -73,6 +79,11 @@ class Listing:
     def CanBid(self):
         return self.bid
 
+'''
+###############################################################################
+USERS
+###############################################################################
+'''
 class User:
     def __init__(self, name, email):
         self.name = name
@@ -139,7 +150,7 @@ class RegistrationApplicant:
 
 '''
 ###############################################################################
-HANDLERS
+PAGE HANDLERS
 ###############################################################################
 '''
 
@@ -166,7 +177,7 @@ class RegisterHandler(webapp3.RequestHandler):
         
         # generate random key
         # check that key does not already exist in db
-        key = "63165165213265"
+        key = uuid.uuid4()
         ou_applicant = RegistrationApplicant(key, name, email, phone_number, address, credit_card)
         
         # if approved then we will make an OU from this information
@@ -247,12 +258,14 @@ def main():
         pass
 #    global app
 #    app.run()
-    httpserver.serve(app, host='127.0.0.1', port=4461)
+    httpd = make_server('127.0.0.1', 8080, app)
+    httpd.serve_forever()
     
 # we don't necessarily want to shut down the application
-def fin():
+def shut_down(*args, **kwargs):
     global app
-    app.shutdown()
+#    app.shutdown()
+#    app.stop()
     with open("listings.txt", "wb") as handle:
         global LISTINGS
         pickle.dump(LISTINGS, handle)
@@ -270,5 +283,7 @@ def fin():
         pickle.dump(SUPER_USERS, handle)
 
 if __name__ == '__main__':
+#    app.start()
     main()
+    shut_down()
     print(APPLICATIONS)
