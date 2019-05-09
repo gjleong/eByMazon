@@ -10,7 +10,8 @@ rel='stylesheet'>
 rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Wine' n Buy</title>
 <style>
 body {
@@ -24,6 +25,52 @@ background: #EFB2B2;
             *{
             box-sizing: boarder box;
             }
+            form.example input[type=text] {
+               padding: 10px;
+               font-size: 17px;
+               border: 1px solid grey;
+               float: left;
+               width: 50%;
+               background: #f1f1f1;
+               }
+
+            form.example button {
+               float: left;
+               width: 10%;
+               padding: 10px;
+               background: rgb(35, 37, 37);
+               color: white;
+               font-size: 17px;
+               border: 1px solid grey;
+               border-left: none;
+               top: 30%;
+               cursor: pointer;
+               }
+            .box {
+               position: absolute;
+               left: 15.49%;
+               right: 10%;
+               top: 16.24%;
+               bottom: 10%;
+               float:top;
+               }
+
+            form.example button:hover {
+                background: #853b51;
+               }
+
+            form.example::after {
+               content: "";
+               clear: both;
+               display: table;
+               }
+            .cart {
+							position: absolute;
+							width: 200px;
+							height: 141px;
+							left: 1300px;
+							top: 30px;
+						}
       
             .itemapp {
                      position: absolute;
@@ -372,11 +419,16 @@ bottom: 40.95%;"/>
     </li>
 
  <li> <a style = "  font-size: 40px;" href="#"><i class="far fa-comment-alt"></i> Messaging</a> </li>
-  <li><a style = "  font-size: 40px;" href="#"><i class="fa fa-fw fa-search"></i> Search</a></li>
-
+  <div class = "cart"style = "float: right;">
+	<li><a style="font-size:48px;color:rgb(54, 48, 48);" href ="#"><i class='fas fa-shopping-cart' ></i>Cart</a></li>
+	</div>
 </ul>
-
-
+<div class="box">
+<form class="example" action="/action_page.php">
+   <input type="text" placeholder="Search.." name="search">
+   <button type="submit"><i class="fa fa-search"></i></button>
+ </form>
+</div>
 <div class = itemapp >
         <h2>ITEM APPLICATIONS</h2> 
         </div>
