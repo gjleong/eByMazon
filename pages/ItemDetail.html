@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Alegreya'
+rel='stylesheet'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link href='https://fonts.googleapis.com/css?family=Alike'
+rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Wine' n Buy</title>
+<style>
+body {
+  position: relative;
+width: 1440px;
+height: 1024px;
+width: 100%;
+background: #EFB2B2;
+}
+			
+            *{
+            box-sizing: boarder box;
+            }
+            form.example input[type=text] {
+               padding: 10px;
+               font-size: 17px;
+               border: 1px solid grey;
+               float: left;
+               width: 50%;
+               background: #f1f1f1;
+               }
+
+            form.example button {
+               float: left;
+               width: 10%;
+               padding: 10px;
+               background: rgb(35, 37, 37);
+               color: white;
+               font-size: 17px;
+               border: 1px solid grey;
+               border-left: none;
+               top: 30%;
+               cursor: pointer;
+               }
+            .box {
+               position: absolute;
+               left: 15.49%;
+               right: 10%;
+               top: 16.24%;
+               bottom: 10%;
+               float:top;
+               }
+
+            form.example button:hover {
+                background: #853b51;
+               }
+
+            form.example::after {
+               content: "";
+               clear: both;
+               display: table;
+               }
+            .cart {
+							position: absolute;
+							width: 200px;
+							height: 141px;
+							left: 1300px;
+							top: 30px;
+						}
+        .copywrite{
+        position: absolute;
+		left: 0%;
+		right: 0%;
+		top: 90.94%;
+		bottom: 0%;
+		text-decoration: none;
+		background: #E4B0B0;
+        padding: 10px;
+        text-align: left;
+        padding: 30px;
+        font-family:Almendra;
+       	font-size:25px;
+       	color:#000000;
+       	 }
+       	 .ps {
+       	 	position: absolute;
+			left: 0.0001%;
+			right: 50.56%;
+			top: 92.52%;
+			bottom: 2.53%;
+			font-family:Almendra;
+			font-size: 25px;
+			text-align: center;
+			text-decoration-line: none;
+			padding: 15px;
+			color: #000000;
+		}
+			.rr {
+				position: absolute;
+				left: 10.3%;
+				right: 10.12%;
+				top: 92.52%;
+				bottom: 2.53%;
+	
+				font-family: Almendra;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 24px;
+				line-height: 27px;
+				padding:15px;
+				text-align: center;
+				text-decoration-line: none;
+				color: #000000;
+			}
+				.career {
+					position: absolute;
+					left: 60.71%;
+					right: 15.64%;
+					top: 92.52%;
+					bottom: 2.53%;
+					padding: 15px;
+					font-family: Almendra;
+					font-style: normal;
+					font-weight: normal;
+					font-size: 24px;
+					line-height: 27px;
+					text-align: center;
+					text-decoration-line: none;
+					color: #000000;
+				}
+				.contact {
+					position: absolute;
+					left: 85.8%;
+					right: 1.16%;
+					top: 92.52%;
+					bottom: 2.53%;
+					font-family: Almendra;
+					font-style: normal;
+					font-weight: normal;
+					font-size: 24px;
+					line-height: 27px;
+					text-align: center;
+					text-decoration-line: none;
+					color: #000000;
+					padding: 15px;
+				}
+             
+				ul {
+  					list-style-type: none;
+  					margin: 0;
+  					padding: 0;
+  					overflow: hidden;
+  					background-color: #333;
+				}
+
+				li {
+  					float: right;
+					}
+
+				li a {
+ 					 display: block;
+  					 color: white;
+  					 text-align: center;
+  					 padding: 14px 16px;
+  					 text-decoration: none;
+					 }
+
+				li a:hover {
+  					 background-color: #111;
+ 					}
+                    
+                     .dropbtn {
+                        background-color: #111;
+                        color: white;
+                        padding: 0.1px 16px;
+                        font-size: 16px;
+                        border: none;
+                                }
+
+                        .dropdown {
+                            float: left;
+                            overflow: hidden;
+                                }
+
+                        .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            background-color: #c48e8e;
+                            min-width: 192px;
+                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                            z-index: 2;
+                            }
+
+                        .dropdown-content a {
+                            color: black;
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            display: block;
+                            }
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #111;}
+
+.airpods{
+position: absolute;
+width: 276px;
+height: 251px;
+left: 180px;
+top: 308px;
+background: url(MRXJ2.jpg), #F8EEEE;
+} 
+.airpod1 {
+    position: absolute;
+width: 49px;
+height: 45px;
+left: 118px;
+top: 313px;
+
+background: url(MRXJ2.jpg), #C4C4C4;
+}
+.airpod2 {
+position: absolute;
+width: 49px;
+height: 45px;
+left: 117px;
+top: 377px;
+background: url(MRXJ2_AV1.jpg), #C4C4C4;
+}
+.airpod3 {
+    position: absolute;
+width: 49px;
+height: 45px;
+left: 117px;
+top: 441px;
+
+background: url(MRXJ2_AV2.jpg), #C4C4C4;
+}
+.airpod4{
+position: absolute;
+width: 49px;
+height: 45px;
+left: 118px;
+top: 505px;
+
+background: url(MRXJ2_AV3.jpg), #C4C4C4;
+}
+.info{
+position: absolute;
+width: 660px;
+height: 72px;
+left: 500px;
+top: 270px;
+
+font-family: Alegreya;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+}
+.info1{
+position: absolute;
+width: 600px;
+height: 36px;
+left: 500px;
+top: 524px;
+
+font-family: Alegreya;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 36px;
+/* identical to box height */
+color: #000000;
+}
+.star1{
+    position: absolute;
+width: 37px;
+height: 35px;
+left: 520px;
+top: 440px;
+
+background: #230730;
+}
+.star2{
+    position: absolute;
+width: 37px;
+height: 35px;
+left: 571px;
+top: 441px;
+
+background: #230730;
+}
+.star3{
+    position: absolute;
+width: 37px;
+height: 35px;
+left: 622px;
+top: 441px;
+
+background: #230730;
+}
+.star4{
+    position: absolute;
+width: 37px;
+height: 35px;
+left: 672px;
+top: 441px;
+background: #230730;
+}
+.star5{
+    position: absolute;
+width: 37px;
+height: 35px;
+left: 720px;
+top: 441px;
+
+background: #F7ECFD;
+
+}
+.pi{
+    position: absolute;
+width: 500px;
+height: 268px;
+left: 500px;
+top: 590px;
+
+font-family: Poly;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 36px;
+
+color: #000000;
+
+}
+.ai{
+position: absolute;
+width: 300px;
+height: 190px;
+left: 100px;
+right: 150px;
+top: 587px;
+
+font-family: Poor Story;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 37px;
+
+color: #000000;
+
+}
+    .ap{
+        position: absolute;
+width: 460px;
+height: 50px;
+left: 1030px;
+top: 400px;
+
+background: #D2A4A4;
+
+    }
+    .App{
+        position: absolute;
+        
+width: 338px;
+height: 39px;
+left: 1150px;
+top: 405px;
+
+font-family: Gothic A1;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 37px;
+text-decoration: none;
+
+color: #000000;
+
+    }
+    .box2{
+    position: absolute;
+width: 460px;
+height: 50px;
+left: 1030px;
+top: 525px;
+
+background: #D2A4A4;
+    }
+    .di{
+        position: absolute;
+width: 220.13px;
+height: 38.78px;
+left: 1180px;
+top: 531.12px;
+
+font-family: Gothic A1;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 37px;
+
+color: #000000;
+
+
+    }
+
+</style>
+</head>
+<body>
+
+       
+<IMG src= "Wine'_n_Buy_logo.png" style = "left: 8.19%;
+right: .770%;
+top: -10.95%;
+bottom: 40.95%;"/>
+
+<IMG src = "Airpod.jpg"class = "airpods">
+    <IMG src = "Airpod2.jpg"class = "airpod1">
+        <IMG src = "Airpod3.jpg"class = "airpod2">
+            <IMG src = "Airpod4.jpg"class = "airpod3">
+                <IMG src = "Airpod5.jpg"class = "airpod4">
+                    <div class="star1"></div>
+                    <div class = "star2"></div>
+                    <div class = "star3"></div>
+                    <div class = "star4"></div>
+                    <div class = "star5"></div>
+<div class = info >
+    <h2>Airpods with Wireless Charging Case $160.00</h2> 
+        </div>
+        <div class = info1 >
+            <h3>PRODUCT INFORMATION</h3> 
+                </div>
+
+<div class="pi">
+    <dl>
+    <dt>What’s Inside the Box:  </dt>
+                             <dd>Airpods</dd>
+                             <dd>Wireless Charging Case</dd>
+                             <dd>Lightining to USB Cable</dd>
+            
+            <dt>Tech Specs: </dt>
+                             <dd>Blutooth</dd>
+                             <dd>Wireless</dd>                        
+</div>           
+<div class="ai">
+        <dt>Airpods Sensors:  </dt>
+        <dd>Dual beamforming micrphones</dd>
+        <dd>Dual Optical Sensors</dd>
+        <dd>Motion detecting accelerometere</dd>
+        <dd>Speech detecting accelerometere</dd>
+        </div>
+<div class="ap"></div>
+<div class="App">
+    <a style= "color: black; text-decoration: none;" href="#">APPROVE ITEM</a>
+</div>
+<div class="box2"></div>
+    <div class = "di">
+        <a style= "color: black; text-decoration: none;" href="#">DENY ITEM</a>
+
+    </div>
+     <!-- NAV BAR-->
+
+<ul>
+        <div class="dropdown">
+                <li button class = "dropbtn" style = "text-decoration: none; color: #7a0000; font-size: 40px;float: left"><a class="active" href="#"><i class="fa fa-fw fa-bars"></i>Menu</a> </button>
+                <div class="dropdown-content">
+                  <a href="#">All Departments</a>
+                  <a href="#">Clothing</a>
+                  <a href="#">Electronics</a>
+                </div>
+              </div>
+ </li>
+ <div class="dropdown" style = "float:right;">
+        <li button class = "dropbtn"  style = "font-size: 40px; float: right"><a class="active" href="#"><i class="fa fa-fw fa-user"></i> Login</a> </button>
+        <div class="dropdown-content" style="min-width: 190px;">
+          <a style= "font-size: 30px;" href="#">Account Info</a>
+          <a style= "font-size: 30px;"href="#">New Item Form</a>
+          <a style= "font-size: 30px;"href="#">Settings</a>
+          <a style= "font-size: 30px;"href="#">Log Out</a>
+        </div>
+      </div>
+    </li>
+
+ <li> <a style = "  font-size: 40px;" href="#"><i class="far fa-comment-alt"></i> Messaging</a> </li>
+  <div class = "cart"style = "float: right;">
+	<li><a style="font-size:48px;color:rgb(54, 48, 48);" href ="#"><i class='fas fa-shopping-cart' ></i>Cart</a></li>
+	</div>
+</ul>
+<div class="box">
+<form class="example" action="/action_page.php">
+   <input type="text" placeholder="Search.." name="search">
+   <button type="submit"><i class="fa fa-search"></i></button>
+ </form>
+</div>
+
+<a href="#aboutus" class="copywrite"> About Us</a>
+
+<a href="#privacyandsecurity" class="ps"> Privacy and Security</a>
+
+<a href="#returnandreplacement" class="rr"> Return and Replacement</a>
+
+<a href="#career" class="career">Career</a>
+
+<a href="#contactus" class="contact">Contact Us</a>
+
+</body>
+</html>
