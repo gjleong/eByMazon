@@ -1,20 +1,34 @@
-$(document).ready(function(){
-  $("input[type='button']".click(function(){
-    var userVal = $("input[name='remember']:checked").val();
-})
+function createJSON() {
+    var name_ = document.getElementById("name").value;
+    var email_ = document.getElementById("email").value;
+    var phone_ = document.getElementById("address").value;
+    var address_ = document.getElementById("address").value;
+    var credit_ = document.getElementById("credit").value;
 
-function submit_clicked(event){
-  event.preventDefault();
-  var content = $('{{ user_info }}').val();
-  $.post(
-    '/confirmation.*',
-    content,
-    handle_response
-  );
-}
+    var GUinfo = '{ "name": '+ name_;
+    GUinfo += ', "email": ' + email_;
+    GUinfo += ', "phone": ' + phone_;
+    GUinfo += ', "address": ' + address_;
+    GUinfo += ', "credit": ' + credit_;
+    GUinfo += '}';
 
-function associate_events(){
-  $('#submit').click(submit_clicked);
-}
-
-$(document).ready(associate_events); //only run when func is loaded
+    // file system module to perform file operations
+    const fs = require('fs');
+  
+    // parse json
+    var jsonObj = JSON.parse(GUinfo);
+    console.log(jsonObj);
+      
+    // stringify JSON Object
+    var jsonContent = JSON.stringify(jsonObj);
+    console.log(jsonContent);
+      
+    fs.writeFile("OUPending.json", jsonContent, 'utf8', function (err) {
+        if (err) {
+            console.log("An error occured while writing JSON Object to File.");
+            return console.log(err);
+        }
+      
+        console.log("JSON file has been saved.");
+    });
+};
