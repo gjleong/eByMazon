@@ -99,7 +99,7 @@
 <body>
  <nav>
         <div class="home-bar">
-            <a href="#"><img src="logo.png" width="205" height="4" class="img-responsive" alt="logo" float="left"></a>
+            <a href="#"><img src="logo.png" class="img-responsive" alt="logo" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"></a>
             <font size="6" face="Courier New" style="margin:450px" >WINE N BUY</font>
             <div class="dropdown">
                 <a href="#"><img src="avatar.png" class="img-responsive" alt="avatar"></a>
@@ -146,11 +146,7 @@
  <br>
  <p>Choose the type of clothes you'd like to see:</p>
   <li>  <a href="#Men"><b>Men Section </b></a>   </li>
-  <li>  <a href="#Women"><b>Woman Section</b> </a>   </li>
-  <li>  <a href="#Children"><b>Children Section </b></a>   </li>
-  <li>  <a href="#Toddlers"><b>Toddlers Section </b></a>   </li>
-  <li>  <a href="#Clearance"><b>Clearance Section </b> </a>   </li>
-  
+  <li>  <a href="#Women"><b>Woman Section</b> </a>   </li>  
  <br>
  <br> 
  <br>
@@ -163,26 +159,7 @@
 <p> <a name ="cm2"> </a>
 <p> <a href = "#cm3" > <img src = "cm3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
 <p> <a name ="cm3"> </a>
-<a href = "#cm4" > <img src = "cm4.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cm4"> </a>
-<a href = "#cm5" > <img src = "cm5.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cm5"> </a>
-<a href = "#cm6" > <img src = "cm6.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cm6"> </a>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <br>
 <br>
 <br>
@@ -213,110 +190,12 @@
 <p> <a name ="c2"> </a>
 <p> <a href = "#c3" > <img src = "c3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
 <p> <a name ="c3"> </a>
-<a href = "#c4" > <img src = "c4.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="c4"> </a>
-<a href = "#c5" > <img src = "c5.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="c5"> </a>
-<a href = "#c6" > <img src = "c6.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="c6"> </a>
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p> <a name="Children"> </a> </p>
-<br><font size="6" face="Courier New" style="margin:450px"><b>Children Section</b></font>
-<p> <a href = "#cc1" > <img src = "cc1.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cc1"> </a>
-<p> <a href = "#cc2" > <img src = "cc2.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cc2"> </a>
-<p> <a href = "#cc3" > <img src = "cc3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cc3"> </a>
-<a href = "#cc4" > <img src = "cc4.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cc4"> </a>
-<a href = "#cc5" > <img src = "cc5.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cc5"> </a>
-<a href = "#cc6" > <img src = "cc6.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cc6"> </a>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p> <a name="Toddlers"> </a> </p>
-<br><font size="6" face="Courier New" style="margin:450px"><b>toddler's Section</b></font>
-<p> <a href = "#ct1" > <img src = "ct1.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="ct1"> </a>
-<p> <a href = "#ct2" > <img src = "ct2.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="ct2"> </a>
-<p> <a href = "#ct3" > <img src = "ct3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="ct3"> </a>
-<a href = "#ct4" > <img src = "ct4.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="ct4"> </a>
-<a href = "#ct5" > <img src = "ct5.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="ct5"> </a>
-<a href = "#ct6" > <img src = "ct6.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="ct6"> </a>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p> <a name="Clearance"> </a> </p>
-<br><font size="6" face="Courier New" style="margin:450px"><b> Clearance Section </b> </font>
-<p> <a href = "#cs1" > <img src = "cs1.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cs1"> </a>
-<p> <a href = "#cs2" > <img src = "cs2.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cs2"> </a>
-<p> <a href = "#cs3" > <img src = "cs3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cs3"> </a>
-<a href = "#cs4" > <img src = "cs4.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cs4"> </a>
-<a href = "#cs5" > <img src = "cs5.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cs5"> </a>
-<a href = "#cs6" > <img src = "cs6.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
-<p> <a name ="cs6"> </a>
 <br>
 <br>
 <br>
