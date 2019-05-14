@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Item's Description</title>
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+</style>
+
+<section1>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+	<section1>
+	
+</section3>
+	   <style>
+            p {
+                margin-left: 50px;
+                font-size: 16px;
+            }
+            body{
+                font-family: 'Courier New', Courier, monospace;
+                background-color: rgb(250, 237, 221);
+            }
+            .home-bar{
+                background-color: rgba(111, 0, 255, 0.486);
+                padding-top: 5px;
+                padding-bottom: 10px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .nav-bar{
+                background-color: rgba(111, 0, 255, 0.267);
+                padding-left: 8px; 
+                padding-bottom: 15px;
+                padding-top: 20px;
+            }
+            
+            .img-responsive {
+                width: 50px;
+                height: 50px;
+            }
+            .img-display{
+                margin-left: 50px;
+                width: 300px;
+                height: 300px;
+                padding: 50px;
+            }
+            .dropdown {
+                position:initial;
+                float: right;
+            }
+            .dropdown2{
+                position: initial;
+                float: left;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
+                right:0;
+            }
+            .dropdown-content2 {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+                
+            }
+            .dropdown2:hover .dropdown-content2 {
+                display: block;
+            }
+            
+            .search-container{
+                padding-left: 10px;
+            }
+            .box{
+                background-color:rgb(255, 255, 255);
+                border: 1px solid rgba(111, 0, 255, 0.486); 
+                margin: 35px;
+                padding: 10px;
+            }
+			#tickets{
+				height:150px;
+				font-size:14pt;}
+			#title{
+				height:40px;
+				font-size:14pt;}
+			#name{
+				height:40px;
+				font-size:14pt;}
+		                    
+            
+        </style> 
+
+	</head>
+	
+</head>
+<body>
+<nav>
+        <div class="home-bar">
+           <a href="#"><img src="logo.png" class="img-responsive" alt="logo" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"></a>
+            <font size="6" face="Courier New" style="margin:450px" >WINE N BUY</font>
+            <div class="dropdown">
+                <a href="#"><img src="avatar.png" class="img-responsive" alt="avatar"></a>
+                <div class="dropdown-content">
+                    <li><a href="#Acct" >      Account Info    </a></li>
+                    <li><a href="#ItemForm" >  New Item Form   </a></li>
+                    <li><a href="#Settings">   Settings        </a></li>
+                    <li><a href="#SignOut">    Sign Out        </a></li>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-bar">
+            <div class="dropdown2">
+                <a href="#"><img src="category.png" class="img-responsive" alt="category"></a>
+                <div class="dropdown-content2">
+                    <li><a href="#All" >      All Departments    </a></li>
+                    <li><a href="#Cloth" >      Clothing         </a></li>
+                    <li><a href="#Tech" >      Technology        </a></li>
+                </div>
+            </div>
+            <div class="search-container">
+                <form id="form1">
+                    <input type="text" placeholder="   Search.." name="search">
+                    <button id="submit-button">Submit</button>
+                </form>
+                <script type="text/javascript">
+                    document.getElementById("submit-button").onclick = function() {
+                        document.getElementById("form1").submit();
+                    }
+                </script>
+            </div>
+        </div>
+    </nav> 
+
+  <form>
+		<br>
+		<br>
+		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WELCOME TO THE ITEM'S DESCRIPTION PAGE</h1>
+		<br>
+		<br>
+		
+		<p> <a href = "#cm1" > <img src = "cm1.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+		<p> <a name ="cm1"> </a>
+	
+		<p><b>&nbsp;Item's Name: </b></p> 
+		<br>
+		&nbsp;&nbsp;&nbsp;<input id="title" type="text" placeholder="Title" maxlength="1000" size="50" />
+		<br>
+		<br>
+		<p><b>&nbsp;Item's Keywords: </b></p>
+		<br>
+		&nbsp;&nbsp;&nbsp;<input id="name" type="text" placeholder="Keywords" maxlength="1000" size="50" />
+		<br>
+		<br>
+		<p><b>&nbsp;Item's Description:</b> </p>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<input id="tickets" type="text" placeholder="Item Description" maxlength="1000" size="50" />
+		<br>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" value="Save/Show" onclick="insert()" />
+		<br>
+		<br>
+		<br>
+		<br>
+		</form>
+		
+	  <div id="display"></div>
+	   
+	
+  <form action = "" method = "" >
+	  <p><b>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  Does this Item have a SET PRICE or is for TO BID</b></p>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <b>Set Price:</b>
+	  <input type = "radio" name = "yesorno" value="setPrice" id = "setPrice" onclick= "analyze(this.value);">
+	  </br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <b> Bid: </b>
+	  <input type = "radio" name = "yesorno" value = "" id = "bid" onclick= "analyze(this.value);">
+  </form>  
+  
+  <div id = "pp"> </div></br>    <div id = "bb"> </div>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+  
+			  <script>
+			var titles  = [];
+			var names   = [];
+			var tickets = [];
+			var prices = [];
+
+			var titleInput  = document.getElementById("title");
+			var nameInput   = document.getElementById("name");
+			var ticketInput = document.getElementById("tickets");
+			var priceInput = document.getElementById("price");
+			var messageBox  = document.getElementById("display");
+
+			function insert ( ) {
+			 titles.push( titleInput.value );
+			 names.push( nameInput.value );
+			 tickets.push( ticketInput.value );
+			  
+			 clearAndShow();
+			}
+
+			function clearAndShow () {
+			  // Clear our fields
+			  titleInput.value = "";
+			  nameInput.value = "";
+			  ticketInput.value = "";
+			  
+			  // Show our output
+			  messageBox.innerHTML = "";
+			  
+			  messageBox.innerHTML += "<b> \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Title: </b>" + titles.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
+			  messageBox.innerHTML += "<b> \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Keywords: </b>" + names.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
+			  messageBox.innerHTML += "<b> \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Item's Description: </b>" + tickets.join(", ")+ "<br>" + "<br/>"+ "<br/>";
+			}
+
+			//Radio Buttons conditional statements
+		
+			function analyze(pay) {
+				if (pay == "setPrice") {
+					var price = prompt("What is the price of this item?", "Item's price");	
+					document.getElementById("pp").innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 The price of your item is $" + price + " dollars";
+					}
+				else {
+					var bid = prompt("At what price does this bid START?", "your bidding");
+						document.getElementById("bb").innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Your starting bid is at $" +  bid + " dollars";					
+					}
+		
+				}
+</script>
+</body>
+</html>
