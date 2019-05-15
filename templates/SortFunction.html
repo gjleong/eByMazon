@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Alegreya'
+rel='stylesheet'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link href='https://fonts.googleapis.com/css?family=Alike'
+rel='stylesheet'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Wine' n Buy</title>
+<style>
+body {
+  position: relative;
+width: 1440px;
+height: 1024px;
+width: 100%;
+background: #EFB2B2;
+         
+         }
+	.heading {
+          	position: absolute;
+		  	left: 18.1%;
+		  	right: 20.28%;
+			top: 20.45%;
+			bottom: 66.07%;
+			
+            
+			line-height: 90px;/* identical to box height */
+			float: center;
+            text-align:center;
+			color: #000000;
+			}
+			
+            *{
+            box-sizing: boarder box;
+            }
+						form.example input[type=text] {
+               padding: 10px;
+               font-size: 17px;
+               border: 1px solid grey;
+               float: left;
+               width: 50%;
+               background: #f1f1f1;
+               }
+
+            form.example button {
+               float: left;
+               width: 10%;
+               padding: 10px;
+               background: rgb(35, 37, 37);
+               color: white;
+               font-size: 17px;
+               border: 1px solid grey;
+               border-left: none;
+               top: 30%;
+               cursor: pointer;
+               }
+            .box {
+               position: absolute;
+               left: 15.49%;
+               right: 10%;
+               top: 16.24%;
+               bottom: 10%;
+               float:top;
+               }
+
+            form.example button:hover {
+                background: #853b51;
+               }
+
+            form.example::after {
+               content: "";
+               clear: both;
+               display: table;
+               }
+            .cart {
+							position: absolute;
+							width: 200px;
+							height: 141px;
+							left: 1300px;
+							top: 30px;
+						}
+         .left {
+         	position: absolute;
+			left: 6.88%;
+			right: 70.82%;
+			top: 41.1%;
+			bottom: 45.94%;
+			background: #856565;
+            padding: 50px;
+            text-align:center;
+            font-family:Impact;
+            font-size:25px;
+            color:#000000;
+            text-decoration: none;
+         	}
+          .middle {
+          	position: absolute;
+			left: 38.88%;
+			right: 38.81%;
+			top: 41.1%;
+			bottom: 45.94%;
+			background: #856565;
+            padding: 50px;
+            text-align:center;
+            text-decoration: none;
+            font-family:Impact;
+            font-size:25px;
+            color:#000000;
+          
+          }
+          .right {
+          	position: absolute;
+			left: 71.83%;
+			right: 5.87%;
+			top: 41.1%;
+			bottom: 45.94%;
+			background: #856565;
+            padding: 50px;
+            text-align:center;
+            text-decoration: none;
+            font-family:Impact;
+            font-size:25px;
+            color:#000000;
+          	
+          }
+          .warning {
+          	position: absolute;
+			left: 24.69%;
+			right: 24.62%;
+			top: 66.07%;
+			bottom: 27.82%;
+            float:center;
+            text-decoration: none;
+			background: #AF6C6C;
+            text-align:center;
+            font-family:Impact;
+            font-size:25px;
+            color:#000000;
+            text-align:center;
+            padding: 15px;
+          }
+          .Uwarning{
+          	position: absolute;
+			left: 24.69%;
+			right: 24.62%;
+			top: 74.08%;
+			bottom: 19.81%;
+			text-decoration: none;
+			background: #AF6C6C;
+			font-family:Impact;
+			font-size:25px;
+			color:#000000;
+			text-align:center;
+			padding: 15px;
+		}
+        .ts{
+        position: absolute;
+		left: 24.69%;
+		right: 24.62%;
+		top: 82.09%;
+		bottom: 11.8%;
+		text-decoration: none;
+		background: #AF6C6C;
+		font-family:Impact;
+		font-size:25px;
+		color:#000000;
+		text-align:center;
+		padding: 15px;
+        }
+        .copywrite{
+        position: absolute;
+		left: 0%;
+		right: 0%;
+		top: 90.94%;
+		bottom: 0%;
+		text-decoration: none;
+		background: #E4B0B0;
+        padding: 10px;
+        text-align: left;
+        padding: 30px;
+        font-family:Almendra;
+       	font-size:25px;
+       	color:#000000;
+       	 }
+       	 .ps {
+       	 	position: absolute;
+			left: 0.0001%;
+			right: 50.56%;
+			top: 92.52%;
+			bottom: 2.53%;
+			font-family:Almendra;
+			font-size: 25px;
+			text-align: center;
+			text-decoration-line: none;
+			padding: 15px;
+			color: #000000;
+		}
+			.rr {
+				position: absolute;
+				left: 10.3%;
+				right: 10.12%;
+				top: 92.52%;
+				bottom: 2.53%;
+	
+				font-family: Almendra;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 24px;
+				line-height: 27px;
+				padding:15px;
+				text-align: center;
+				text-decoration-line: none;
+				color: #000000;
+			}
+				.career {
+					position: absolute;
+					left: 60.71%;
+					right: 15.64%;
+					top: 92.52%;
+					bottom: 2.53%;
+					padding: 15px;
+					font-family: Almendra;
+					font-style: normal;
+					font-weight: normal;
+					font-size: 24px;
+					line-height: 27px;
+					text-align: center;
+					text-decoration-line: none;
+					color: #000000;
+				}
+				.contact {
+					position: absolute;
+					left: 85.8%;
+					right: 1.16%;
+					top: 92.52%;
+					bottom: 2.53%;
+					font-family: Almendra;
+					font-style: normal;
+					font-weight: normal;
+					font-size: 24px;
+					line-height: 27px;
+					text-align: center;
+					text-decoration-line: none;
+					color: #000000;
+					padding: 15px;
+				}
+				ul {
+  					list-style-type: none;
+  					margin: 0;
+  					padding: 0;
+  					overflow: hidden;
+  					background-color: #333;
+				}
+
+				li {
+  					float: right;
+					}
+
+				li a {
+ 					 display: block;
+  					 color: white;
+  					 text-align: center;
+  					 padding: 14px 16px;
+  					 text-decoration: none;
+					 }
+
+				li a:hover {
+  					 background-color: #111;
+ 					}
+
+					 .dropbtn {
+  background-color: #111;
+  color: white;
+  padding: 0.1px 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #c48e8e;
+  min-width: 192px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #111;}
+
+a:hover {
+  color: #222222
+}
+
+/* Dropdown */
+
+.dropdown1 {
+  display: inline-block;
+  position: relative;
+  float:right;
+  top: 245px;
+  bottom: 100px;
+}
+
+.dd-button {
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px 30px 10px 20px;
+  background-color: #917d7d;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 10px; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+.dd-button:hover {
+  background-color: #eeeeee;
+}
+
+
+.dd-input {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+}
+
+.dd-input + .dd-menu {
+  display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+  display: block;
+} 
+
+.dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-menu li:hover {
+  background-color: #774747;
+}
+
+.dd-menu li a {
+  display: block;
+  margin: 0px;
+  padding: 10px 20px;
+}
+
+.dd-menu li.divider{
+  padding: 0;
+  border-bottom: 1px solid #331717;
+}
+          
+</style>
+</head>
+<body>
+
+<IMG src= "Wine'_n_Buy_logo.png" style = "left: 8.19%;
+right: .770%;
+top: -10.95%;
+bottom: 40.95%;"/>
+<label class="dropdown1">
+
+        <div class="dd-button">
+          Sort by: Featured
+        </div>
+      
+        <input type="checkbox" class="dd-input" id="test">
+      
+        <ul class="dd-menu">
+          <li>Price: Low to High</li>
+          <li>PriceL High to Low</li>
+          <li>Avg. Customer Review</li>
+          <li class="divider"></li>
+        </ul>
+        
+      </label>
+            
+<ul>
+		<div class="dropdown">
+				<li button class = "dropbtn" style = "text-decoration: none; color: #7a0000; font-size: 40px;float: left"><a class="active" href="#"><i class="fa fa-fw fa-bars"></i>Menu</a> </button>
+				<div class="dropdown-content">
+					<a href="#">All Departments</a>
+					<a href="#">Clothing</a>
+					<a href="#">Electronics</a>
+				</div>
+			</div>
+</li>
+<div class="dropdown" style = "float:right;">
+<li button class = "dropbtn"  style = "font-size: 40px; float: right"><a class="active" href="#"><i class="fa fa-fw fa-user"></i> Login</a> </button>
+<div class="dropdown-content" style="min-width: 190px;">
+	<a style= "font-size: 30px;" href="#">Account Info</a>
+	<a style= "font-size: 30px;"href="#">New Item Form</a>
+	<a style= "font-size: 30px;"href="#">Settings</a>
+	<a style= "font-size: 30px;"href="#">Log Out</a>
+</div>
+</div>
+</li>
+ <li> <a style = "  font-size: 40px;" href="#"><i class="far fa-comment-alt"></i> Messaging</a> </li>
+	<div class = "cart"style = "float: right;">
+	<li><a style="font-size:48px;color:rgb(54, 48, 48);" href ="#"><i class='fas fa-shopping-cart' ></i>Cart</a></li>
+	</div>
+</ul>
+<div class="box">
+	<form class="example" action="/action_page.php">
+		 <input type="text" placeholder="Search.." name="search">
+		 <button type="submit"><i class="fa fa-search"></i></button>
+	 </form>
+	</div>
+
+<a href="#aboutus" class="copywrite"> About Us</a>
+
+<a href="#privacyandsecurity" class="ps"> Privacy and Security</a>
+
+<a href="#returnandreplacement" class="rr"> Return and Replacement</a>
+
+<a href="#career" class="career">Career</a>
+
+<a href="#contactus" class="contact">Contact Us</a>
+
+
+
+
+</body>
+</html>

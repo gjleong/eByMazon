@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine n' Buy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            p {
+                margin-left: 50px;
+                font-size: 16px;
+            }
+            body{
+                font-family: 'Courier New', Courier, monospace;
+                background-color: rgb(250, 237, 221);
+            }
+            .home-bar{
+                background-color: rgba(111, 0, 255, 0.486);
+                padding-top: 5px;
+                padding-bottom: 10px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .nav-bar{
+                background-color: rgba(111, 0, 255, 0.267);
+                padding-left: 8px; 
+                padding-bottom: 15px;
+                padding-top: 20px;
+            }
+            
+            .img-responsive {
+                width: 50px;
+                height: 50px;
+            }
+            .img-display{
+                margin-left: 50px;
+                width: 300px;
+                height: 300px;
+                padding: 50px;
+            }
+            .dropdown {
+                position:initial;
+                float: right;
+            }
+            .dropdown2{
+                position: initial;
+                float: left;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
+                right:0;
+            }
+            .dropdown-content2 {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+                
+            }
+            .dropdown2:hover .dropdown-content2 {
+                display: block;
+            }
+            
+            .search-container{
+                padding-left: 10px;
+            }
+            .box{
+                background-color:rgb(255, 255, 255);
+                border: 1px solid rgba(111, 0, 255, 0.486); 
+                margin: 35px;
+                padding: 10px;
+            }
+            
+            
+            
+        </style>
+
+    <meta charset="utf-8">
+
+</head>
+<body>
+
+    <nav>
+        <div class="home-bar">
+            <a href="#"><img src="img/logo.jpg" class="img-responsive" alt="logo" float="left"></a>
+            <font size="6" face="Courier New" style="margin:450px" >WHINE N BUY</font>
+            <div class="dropdown">
+                <a href="#"><img src="img/avatar.png" class="img-responsive" alt="avatar"></a>
+                <div class="dropdown-content">
+                    <li><a href="#Acct" >      Account Info    </a></li>
+                    <li><a href="#ItemForm" >  New Item Form   </a></li>
+                    <li><a href="#Settings">   Settings        </a></li>
+                    <li><a href="#SignOut">    Sign Out        </a></li>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-bar">
+            <div class="dropdown2">
+                <a href="#"><img src="img/category.png" class="img-responsive" alt="category"></a>
+                <div class="dropdown-content2">
+                    <li><a href="#All" >      All Departments    </a></li>
+                    <li><a href="#Cloth" >      Clothing         </a></li>
+                    <li><a href="#Tech" >      Technology        </a></li>
+                </div>
+            </div>
+            <div class="search-container">
+                <form id="form1">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button id="submit-button">Submit</button>
+                </form>
+                <script type="text/javascript">
+                    document.getElementById("submit-button").onclick = function() {
+                        document.getElementById("form1").submit();
+                    }
+                </script>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section>
+        <div class="box">
+            <p>Most Popular Items Listed</p>
+            <div id="images">
+                <a href="#tech/comp1"><img src="img/comp1.jpg" class="img-display" alt="tech"></a>
+                <a href="#tech/comp2"><img src="img/comp2.jpg" class="img-display" alt="tech"></a>
+                <a href="#tech/comp3"><img src="img/comp3.jpg" class="img-display" alt="tech"></a>  
+            </div>
+        </div>
+        
+        <div class="box">
+            <p>Top Rated VIP Sellers</p>
+            <div id="images">
+                    <a href="#OU/seller1"><img src="img/avatar.png" class="img-display" alt="seller"></a>
+                    <a href="#OU/seller2"><img src="img/avatar.png" class="img-display" alt="seller"></a>
+                    <a href="#OU/seller3"><img src="img/avatar.png" class="img-display" alt="seller"></a>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <div class="clearfix">
+      <button onclick="window.location.href = 'register'" type="button" class="registerbtn">Sign Up</button>
+    </div>
+
+
+</body>
