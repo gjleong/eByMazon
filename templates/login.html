@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+		<html>
+		<head>
+		<title>Ordinary User's Page</title>
+		<section1>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+			<section1>
+			
+			<meta charset="windows-1252">
+			<meta charset = "utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+			<meta charset = "utf-8">
+	<link rel = "stylesheet" href = "style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+			   <style> 
+					p {
+						margin-left: 50px;
+						font-size: 16px;
+					}
+					body{
+						font-family: 'Courier New', Courier, monospace;
+						background-color: rgb(250, 237, 221);
+					}
+					.home-bar{
+						background-color: rgba(111, 0, 255, 0.486);
+						padding-top: 5px;
+						padding-bottom: 10px;
+						padding-left: 8px;
+						padding-right: 8px;
+					}
+					.nav-bar{
+						background-color: rgba(111, 0, 255, 0.267);
+						padding-left: 8px; 
+						padding-bottom: 15px;
+						padding-top: 20px;
+					}
+					
+					.img-responsive {
+						width: 50px;
+						height: 50px;
+					}
+					.img-display{
+						margin-left: 50px;
+						width: 300px;
+						height: 300px;
+						padding: 50px;
+					}
+					.dropdown {
+						position:initial;
+						float: right;
+					}
+					.dropdown2{
+						position: initial;
+						float: left;
+					}
+					.dropdown-content {
+						display: none;
+						position: absolute;
+						background-color: #f9f9f9;
+						min-width: 160px;
+						box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+						padding: 12px 16px;
+						z-index: 100;
+						right:0;
+					}
+					.dropdown-content2 {
+						display: none;
+						position: absolute;
+						background-color: #f9f9f9;
+						min-width: 160px;
+						box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+						padding: 12px 16px;
+						z-index: 100;
+					}
+					.dropdown:hover .dropdown-content {
+						display: block;
+						
+					}
+					.dropdown2:hover .dropdown-content2 {
+						display: block;
+					}
+					
+					.search-container{
+						padding-left: 10px;
+					}
+					.box{
+						background-color:rgb(255, 255, 255);
+						border: 1px solid rgba(111, 0, 255, 0.486); 
+						margin: 35px;
+						padding: 10px;}	
+					body {font-family: Arial, Helvetica, sans-serif;}	
+					{box-sizing: border-box;}
+
+					.open-button {
+					  background-color: #555;
+					  color: white;
+					  padding: 16px 20px;
+					  border: none;
+					  cursor: pointer;
+					  opacity: 0.8;
+					  position: fixed;
+					  bottom: 23px;
+					  right: 28px;
+					  width: 280px;
+					}
+					
+					.chat-popup {
+					  display: none;
+					  position: fixed;
+					  bottom: 0;
+					  right: 15px;
+					  border: 3px solid #f1f1f1;
+					  z-index: 9;
+					}
+
+					.form-container {
+					  max-width: 300px;
+					  padding: 10px;
+					  background-color: white;
+					}
+
+					.form-container textarea {
+					  width: 100%;
+					  padding: 15px;
+					  margin: 5px 0 22px 0;
+					  border: none;
+					  background: #f1f1f1;
+					  resize: none;
+					  min-height: 200px;
+					}
+
+					.form-container textarea:focus {
+					  background-color: #ddd;
+					  outline: none;
+					}
+
+					.form-container .btn {
+					  background-color: #4CAF50;
+					  color: white;
+					  padding: 16px 20px;
+					  border: none;
+					  cursor: pointer;
+					  width: 100%;
+					  margin-bottom:10px;
+					  opacity: 0.8;
+					}
+					
+					.form-container .cancel {
+					  background-color: purple;
+					}
+					
+					.form-container .btn:hover, .open-button:hover {
+					  opacity: 1;
+					}	
+					
+					 li{cursor: pointer}
+				</style> 
+
+		</head>
+
+
+		<body>
+		<nav>
+				<div class="home-bar">
+				   <a href="#"><img src="logo.png" class="img-responsive" alt="logo" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"></a>
+					<font size="6" face="Courier New" style="margin:450px" >WINE N BUY</font>
+					<div class="dropdown">
+						<a href="#"><img src="avatar.png" class="img-responsive" alt="avatar"></a>
+						<div class="dropdown-content">
+							<li><a href="#Acct" >      Account Info    </a></li>
+							<li><a href="#ItemForm" >  New Item Form   </a></li>
+							<li><a href="#Settings">   Settings        </a></li>
+							<li><a href="#SignOut">    Sign Out        </a></li>
+						</div>
+					</div>
+				</div>
+				
+				<div class="nav-bar">
+					<div class="dropdown2">
+						<a href="#"><img src="category.png" class="img-responsive" alt="category"></a>
+						<div class="dropdown-content2">
+							<li><a href="#All" >      All Departments    </a></li>
+							<li><a href="#Cloth" >      Clothing         </a></li>
+							<li><a href="#Tech" >      Technology        </a></li>
+						</div>
+					</div>
+					<div class="search-container">
+						<form id="form1">
+							<input type="text" placeholder="   Search.." name="search">
+							<button id="submit-button">Submit</button>
+						</form>
+						<script type="text/javascript">
+							document.getElementById("submit-button").onclick = function() {
+								document.getElementById("form1").submit();
+							}
+						</script>
+					</div>
+				</div>
+			</nav> 
+		<br>
+		<br>
+		<br>
+		<br>
+		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGIN PAGE:</h1>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: </b></p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="email" type="text" placeholder="email@email.com" maxlength="1000" size="50" />
+		<br>
+		<br>
+		<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password: </b></p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="password" type="text" placeholder="********" maxlength="1000" size="50" />
+		<br>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn">Send</button>		
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="display"></div>
+		<br>
+		<br>
+		<br>
+		<br>		
+		 <form action = "" method = "" >
+	  <p><b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hello are you an Ordinary User (OU) or a Super User (SU)? </b></p>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Super User:</b>
+	  <input type = "radio" name = "yesorno" value="su" id = "su" onclick= "Is(this.value);">
+	  </br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Ordinary User: </b>
+	  <input type = "radio" name = "yesorno" value = "ou" id = "ou" onclick= "Is(this.value);">
+	  <br>
+  </form>  
+		  <div id = "super"> </div></br>    <div id = "ordinary"> </div>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		<script>
+		
+			var email  = [];
+			var password   = [];
+			
+			var emailInput  = document.getElementById("title");
+			var passwordInput   = document.getElementById("name");
+
+			
+			function insert ( ) {
+			 email.push( emailInput.value );
+			 password.push( passwordInput.value );
+			  
+			 clearAndShow();
+			}
+
+			function clearAndShow (){
+			  emailInput.value = "";
+			  passwordInput.value = "";
+			  
+			  // Show our output
+			  messageBox.innerHTML = "";
+			  
+			  messageBox.innerHTML += "<b> \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Title: </b>" + email.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
+			  messageBox.innerHTML += "<b> \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Keywords: </b>" + password.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
+			
+			}
+			
+			
+			//Radio Buttons SU or OU
+		
+			function Is(is) {
+				if (is == "su") {
+					var su = prompt("You are a Super User, how are you today?", "answer");	
+					document.getElementById("super").innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 The price of your item is $" + su + " dollars";
+					}
+				else {
+					var ou = prompt("You are an Ordinary User, how do you feel?", "answer");
+						document.getElementById("ordinary").innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Your starting bid is at $" +  ou + " dollars";					
+					}
+		
+				}
+
+		</script>
+			
+	</body>
+		</html>
