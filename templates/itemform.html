@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Wine n' Buy</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="/js/register.js" type="text/javascript"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        p { 
+          margin-left: 50px;
+        }
+
+        body{
+          font-family: "Trebuchet MS", Helvetica, sans-serif;
+          background-image: url("img/background.png");
+        }
+
+        .home-bar{
+          background-color:#c0dbff8c;
+          padding-top: 5px;
+          padding-bottom: 10px;
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        .nav-bar{
+          background-color: rgba(111, 0, 255, 0.267);
+          padding: 15px;
+        }
+          
+        .img-responsive {
+          width: 50px;
+          height: 50px;
+        }
+
+        .img-display{
+          margin-left: 50px;
+          width: 300px;
+          height: 300px;
+          padding: 50px;
+        }
+
+        .dropdown {
+          position:initial;
+          float: right;
+        }
+
+        .dropdown2{
+          position: initial;
+          float: left;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 100;
+          right:0;
+        }
+
+        .dropdown-content2 {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .dropdown2:hover .dropdown-content2 {
+          display: block;
+        }
+          
+
+        .box{
+          background-color:rgb(255, 255, 255);
+          border: 2px solid rgba(16, 0, 85, 0.705); 
+          margin: 35px;
+          padding: 20px;
+        }
+
+        #search{
+          width:850px;
+          margin-left: 125px;
+        }
+
+        input[type=text]{
+            width: 60%;
+            margin-left: 10px;
+        }
+        
+      </style>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+
+    <nav>
+      <div class="home-bar">
+        <a href="#"><img src="img/logo.png" style="width: 275px; height: 50px;" alt="logo" ></a>
+        <div class="dropdown">
+          <a ><img src="img/avatar.png" style="width: 50px; height: 50px;" alt="avatar"></a>
+          <div class="dropdown-content">
+            <li><a href="#Acct" >      Account Info    </a></li>
+            <li><a href="#ItemForm" >  New Item Form   </a></li>
+            <li><a href="#Settings">   Settings        </a></li>
+            <li><a href="#SignOut">    Sign Out        </a></li>
+          </div>
+        </div>
+      </div>
+        
+      <div class="nav-bar">
+        <div class="dropdown2">
+          <a href="#"><img src="img/category.png" style="width: 30px; height: 30px;" alt="category"></a>
+          <div class="dropdown-content2">
+            <li><a href="#All" >      All Departments    </a></li>
+            <li><a href="#Cloth" >      Clothing         </a></li>
+            <li><a href="#Tech" >      Technology        </a></li>
+          </div>
+        </div>
+        <div class="search-container">
+          <form id="form1">
+            <input type="text" placeholder="Search.." name="search" id="search">
+            <button id="submit-button">Submit</button>
+          </form>
+          <script type="text/javascript">
+            document.getElementById("submit-button").onclick = function() {
+              document.getElementById("form1").submit();
+            }
+          </script>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="box">
+        <form style="border:1px solid #ccc; padding: 10px;" >
+        
+            <h1>Request to Sell a New Item</h1>
+            <p>Please fill in this form to create a new listing.</p>
+            <hr>
+            
+            <label for="title"><b>Title</b></label>
+            <input type="text" placeholder="Enter Title" name="title" style="margin-left:48px" required>
+            <br>
+            <label for="keywords"><b>Keywords</b></label>
+            <input type="text" placeholder="Separate words with ';' " name="email" width="50" required>
+            <br>
+            
+            <div class="Price Options">
+              <label for="price"><b>Pick a Price Option: </b></label> <br>
+              <input type="radio" name="price" value="fixed"> Fixed Price <br>
+              <input type="radio" name="price" value="range"> Ranged Price <br>
+            </div>
+            
+            <br>
+            
+            <div class="Upload Image">
+                <label for="image"><b>Upload an Image</b></label>
+                <input type="file" name="image" accept="image/*">
+                <input type="submit" value="Submit">
+            </div>
+            <small>Currently, you can only upload one image file.</small>
+            <br>
+            <br>
+            By submitting this form you agree to our <a href="#Terms&Privacy" style="color:dodgerblue">Terms & Privacy</a>
+            
+            <div class="clearfix">
+                <button onclick="window.location.href = '/'" type="button" class="cancelbtn">Cancel</button>
+                <button onclick="window.location.href = '/confirmation'" type="submit" class="signupbtn">Sign Up</button>
+            </div>        
+        </form>
+    </div>
+
+  </body>
+</html>
+
+
+<form action = "" method = "" >
+  <p><b>
+  Does this Item have a SET PRICE or is for TO BID</b></p>
+  
+  <b>Set Price:</b>
+  <input type = "radio" name = "yesorno" value="setPrice" id = "setPrice" onclick= "analyze(this.value);">
+  </br>
+  
+  <b> Bid: </b>
+  <input type = "radio" name = "yesorno" value = "" id = "bid" onclick= "analyze(this.value);">
+</form>  
+
+<div id = "pp"> </div></br>    <div id = "bb"> </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+      <script>
+    var titles  = [];
+    var names   = [];
+    var tickets = [];
+    var prices = [];
+    var titleInput  = document.getElementById("title");
+    var nameInput   = document.getElementById("name");
+    var ticketInput = document.getElementById("tickets");
+    var priceInput = document.getElementById("price");
+    var messageBox  = document.getElementById("display");
+    function insert ( ) {
+     titles.push( titleInput.value );
+     names.push( nameInput.value );
+     tickets.push( ticketInput.value );
+      
+     clearAndShow();
+    }
+    function clearAndShow () {
+      // Clear our fields
+      titleInput.value = "";
+      nameInput.value = "";
+      ticketInput.value = "";
+      
+      // Show our output
+      messageBox.innerHTML = "";
+      
+      messageBox.innerHTML += "<b> Title: </b>" + titles.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
+      messageBox.innerHTML += "<b> Keywords: </b>" + names.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
+      messageBox.innerHTML += "<b> Item's Description: </b>" + tickets.join(", ")+ "<br>" + "<br/>"+ "<br/>";
+    }
+    //Radio Buttons conditional statements
+  
+    function analyze(pay) {
+      if (pay == "setPrice") {
+        var price = prompt("What is the price of this item?", "Item's price");	
+        document.getElementById("pp").innerHTML = The price of your item is $" + price + " dollars";
+        }
+      else {
+        var bid = prompt("At what price does this bid START?", "your bidding");
+          document.getElementById("bb").innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Your starting bid is at $" +  bid + " dollars";					
+        }
+  
+      }
