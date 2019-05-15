@@ -4,10 +4,10 @@ eByMazon
 Choux Cream (Assigned Team #2)
 """
 # our modules
-import su
-import ou
-import gu
-import items
+#import su
+#import ou
+#import gu
+#import items
 # import wndDatabase
 
 # Handle web requests
@@ -66,6 +66,68 @@ def GetMostPopularItems():
 def GetMostPopularOUs():
     return 'popular OUs'
 
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+    def GetName(self):
+        return self.name
+    def GetEmail(self):
+        return self.email
+    def SetName(self, name):
+        self.name = name
+    def SetEmail(self, email):
+        self.email = email
+
+class OrdinaryUser(User):
+    def __init__(self, username, name, email, address, phone, credit_card):
+        super().__init__(self, name, email)
+        self.username = username
+        self.address = address
+        self.phone = phone
+        self.credit_card = credit_card
+    # Get
+    def GetUserName(self):
+        return self.username
+    def GetName(self):
+        return super().GetName(self)
+    def GetEmail(self):
+        return super().GetEmail(self)
+    def GetAddress(self):
+        return self.address
+    def GetPhoneNumber(self):
+        return self.phone
+    def GetCreditCard(self):
+        return self.credit_card
+    # Set
+    # OU is not allowed to change their username
+    def SetName(self, name):
+        self.name = super().SetName(self, name)
+    def SetEmail(self, email):
+        self.email = super().SetEmail(self, email)
+    def SetAddress(self, address):
+        self.address = address
+    def SetPhoneNumber(self, phone):
+        self.phone= phone
+    def SetCreditCard(self, credit_card):
+        self.credit_card = credit_card
+    
+'''
+SuperUser has a higher level of access, compared to OrdinaryUser
+'''
+class SuperUser(User):
+    def __init__(self):
+        super().__init__(self)
+    def GetUserName(self):
+        return self.username
+    def GetName(self):
+        return super().GetName(self)
+    def GetEmail(self):
+        return super().GetEmail(self)
+    
+
+
+
 '''
 ###############################################################################
 GUEST/ORDINARY USER HANDLERS
@@ -87,7 +149,7 @@ class AccountEditHandler(webapp3.RequestHandler):
         username = self.request.get('username')
         name = self.request.get('name')
         email = self.request.get('email')
-        phone_number = self.request.get('phone')
+        phone = self.request.get('phone')
         address = self.request.get('address')
         credit_card = self.request.get('credit_card')
         
@@ -101,7 +163,7 @@ class AccountEditHandler(webapp3.RequestHandler):
                 'username': username,
                 'name': name,
                 'email': email,
-                'phone': phone_number,
+                'phone': phone,
                 'address': address,
                 'credit_card': credit_card
         }
@@ -185,14 +247,23 @@ class LoginHandler(webapp3.RequestHandler):
         email = self.request.get('email')
         password = self.request.get('password')
         
-        # TODO: validate against db (auth)
-        db.authenticate(name=email,
-                        password=password,
-                        mechanism='SCRAM-SHA-1',
-                        source='AUTH')
+        auth_query = {'email': email, 'password': password}
         
-#        if AUTH[email].password == password:
-#            session.logged_in = True
+        login = AUTH.find(auth_query)
+        
+        if not login == NULL:
+            user_query = {'email': email}
+            
+            current = USERS.find(user_query)
+            current_user = OrdinaryUser(current['username'], current['name'],
+                                        current['email'], current['address']
+                                        current['phone'], current['credit_card'])
+        
+        # TODO: validate against db (auth)
+#        db.authenticate(name=email,
+#                        password=password,
+#                        mechanism='SCRAM-SHA-1',
+#                        source='AUTH')
 
 # Logout 
 class LogoutHandler(webapp3.RequestHandler):
@@ -226,7 +297,7 @@ class RegisterHandler(webapp3.RequestHandler):
         username = self.request.get('username')
         name = self.request.get('name')
         email = self.request.get('email')
-        phone_number = self.request.get('phone')
+        phone= self.request.get('phone')
         address = self.request.get('address')
         credit_card = self.request.get('credit_card')
         # TODO: ensure that user is not in db, then add
@@ -234,7 +305,7 @@ class RegisterHandler(webapp3.RequestHandler):
                 'username': username,
                 'name': name,
                 'email': email,
-                'phone_number': phone_number,
+                'phone': phone,
                 'address': address,
                 'credit_card': credit_card,
                 'signup': 'submit'
@@ -244,7 +315,7 @@ class RegisterHandler(webapp3.RequestHandler):
                 'username': username,
                 'name': name,
                 'email': email,
-                'phone_number': phone_number,
+                'phone': phone,
                 'address': address,
                 'credit_card': credit_card
         }
@@ -361,30 +432,30 @@ class ItemListingAppHandler(webapp3.RequestHandler):
 OTHER HANDLERS <GET-ONLY>
 ###############################################################################
 '''
-class AboutHandler(webapp3.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/about.html')
-        self.response.write(template.render())
-class PrivacyHandler(webapp3.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/privacy.html')
-        self.response.write(template.render())
-class TermsHandler(webapp3.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/terms.html')
-        self.response.write(template.render())
-class ReturnHandler(webapp3.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/return.html')
-        self.response.write(template.render())
-class CareersHandler(webapp3.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/careers.html')
-        self.response.write(template.render())
-class ContactHandler(webapp3.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/contact.html')
-        self.response.write(template.render())
+#class AboutHandler(webapp3.RequestHandler):
+#    def get(self):
+#        template = jinja_environment.get_template('templates/about.html')
+#        self.response.write(template.render())
+#class PrivacyHandler(webapp3.RequestHandler):
+#    def get(self):
+#        template = jinja_environment.get_template('templates/privacy.html')
+#        self.response.write(template.render())
+#class TermsHandler(webapp3.RequestHandler):
+#    def get(self):
+#        template = jinja_environment.get_template('templates/terms.html')
+#        self.response.write(template.render())
+#class ReturnHandler(webapp3.RequestHandler):
+#    def get(self):
+#        template = jinja_environment.get_template('templates/return.html')
+#        self.response.write(template.render())
+#class CareersHandler(webapp3.RequestHandler):
+#    def get(self):
+#        template = jinja_environment.get_template('templates/careers.html')
+#        self.response.write(template.render())
+#class ContactHandler(webapp3.RequestHandler):
+#    def get(self):
+#        template = jinja_environment.get_template('templates/contact.html')
+#        self.response.write(template.render())
 
 class ErrorHandler(webapp3.RequestHandler):
     def get(self):
@@ -406,12 +477,12 @@ class MainHandler(webapp3.RequestHandler):
 app = webapp3.WSGIApplication([
         ('/', MainHandler), #index.html, homeGU.html
         ############################# GET ONLY
-        ('/about', AboutHandler),
-        ('/privacy', PrivacyHandler),
-        ('/terms', TermsHandler),
-        ('/return', ReturnHandler),
-        ('/careers', CareersHandler),
-        ('/contact', ContactHandler),
+#        ('/about', AboutHandler),
+#        ('/privacy', PrivacyHandler),
+#        ('/terms', TermsHandler),
+#        ('/return', ReturnHandler),
+#        ('/careers', CareersHandler),
+#        ('/contact', ContactHandler),
         ############################## GET & POST
         ('/account', AccountHandler),
         ('/account#edit', AccountEditHandler),
@@ -433,6 +504,7 @@ app = webapp3.WSGIApplication([
 #app.config['SERVER_NAME'] = domain
 
 def main():
+    
     httpserver.serve(app, host='127.0.0.1', port=1070)
     
 # we don't necessarily want to shut down the application
