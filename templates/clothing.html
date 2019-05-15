@@ -1,0 +1,231 @@
+<!doctype html>
+<html> 
+
+	<head>
+	<title>Clothes</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	    <style>
+            p {
+                margin-left: 50px;
+                font-size: 16px;
+            }
+            body{
+                font-family: 'Courier New', Courier, monospace;
+                background-color: rgb(250, 237, 221);
+            }
+            .home-bar{
+                background-color: rgba(111, 0, 255, 0.486);
+                padding-top: 5px;
+                padding-bottom: 10px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .nav-bar{
+                background-color: rgba(111, 0, 255, 0.267);
+                padding-left: 8px; 
+                padding-bottom: 15px;
+                padding-top: 20px;
+            }
+            
+            .img-responsive {
+                width: 50px;
+                height: 50px;
+            }
+            .img-display{
+                margin-left: 50px;
+                width: 300px;
+                height: 300px;
+                padding: 50px;
+            }
+            .dropdown {
+                position:initial;
+                float: right;
+            }
+            .dropdown2{
+                position: initial;
+                float: left;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
+                right:0;
+            }
+            .dropdown-content2 {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+                padding: 12px 16px;
+                z-index: 100;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+                
+            }
+            .dropdown2:hover .dropdown-content2 {
+                display: block;
+            }
+            
+            .search-container{
+                padding-left: 10px;
+            }
+            .box{
+                background-color:rgb(255, 255, 255);
+                border: 1px solid rgba(111, 0, 255, 0.486); 
+                margin: 35px;
+                padding: 10px;
+            }
+            
+            
+            
+        </style>
+		
+
+
+    <meta charset="utf-8">
+	
+	</head>
+	
+<body>
+ <nav>
+        <div class="home-bar">
+            <a href="#"><img src="logo.png" class="img-responsive" alt="logo" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"></a>
+            <font size="6" face="Courier New" style="margin:450px" >WINE N BUY</font>
+            <div class="dropdown">
+                <a href="#"><img src="avatar.png" class="img-responsive" alt="avatar"></a>
+                <div class="dropdown-content">
+                    <li><a href="#Acct" >      Account Info    </a></li>
+                    <li><a href="#ItemForm" >  New Item Form   </a></li>
+                    <li><a href="#Settings">   Settings        </a></li>
+                    <li><a href="#SignOut">    Sign Out        </a></li>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-bar">
+            <div class="dropdown2">
+                <a href="#"><img src="category.png" class="img-responsive" alt="category"></a>
+                <div class="dropdown-content2">
+                    <li><a href="#All" >      All Departments    </a></li>
+                    <li><a href="#Cloth" >      Clothing         </a></li>
+                    <li><a href="#Tech" >      Technology        </a></li>
+                </div>
+            </div>
+            <div class="search-container">
+                <form id="form1">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button id="submit-button">Submit</button>
+                </form>
+                <script type="text/javascript">
+                    document.getElementById("submit-button").onclick = function() {
+                        document.getElementById("form1").submit();
+                    }
+                </script>
+            </div>
+        </div>
+    </nav>
+
+	
+<ul>
+ <br>
+ <br> 
+ <br>
+ <h1> <b> WELCOME TO THE CLOTHING SECTION</b> </h1> 
+ <br>
+ <br> 
+ <br>
+ <p>Choose the type of clothes you'd like to see:</p>
+  <li>  <a href="#Men"><b>Men Section </b></a>   </li>
+  <li>  <a href="#Women"><b>Woman Section</b> </a>   </li>  
+ <br>
+ <br> 
+ <br>
+                            
+<p> <a name="Men"> </a> </p>
+<br><font size="6" face="Courier New" style="margin:450px" ><b>Men's Section</b> </font>
+<p> <a href = "#cm1" > <img src = "cm1.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+<p> <a name ="cm1"> </a>
+<p> <a href = "#cm2" > <img src = "cm2.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+<p> <a name ="cm2"> </a>
+<p> <a href = "#cm3" > <img src = "cm3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+<p> <a name ="cm3"> </a>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p> <a name="Women"> </a> </p>
+<br><font size="6" face="Courier New" style="margin:450px"><b>Women's Section</b></font>
+<p> <a href = "#c1" > <img src = "c1.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+<p> <a name ="c1"> </a>
+<p> <a href = "#c2" > <img src = "c2.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+<p> <a name ="c2"> </a>
+<p> <a href = "#c3" > <img src = "c3.jpg" width = "300" height = "400" style = "float : left; margin-right : 1%; margin-bottom : 0.5em;"> </a> </p>
+<p> <a name ="c3"> </a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+</ul>
+
+</body>
+</html>
