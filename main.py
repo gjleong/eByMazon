@@ -52,6 +52,8 @@ if not "ITEMS_PENDING" in db.list_collection_names():
     ITEMS_PENDING = db["ITEMS_PENDING"]
 if not "ITEMS_REQUESTED" in db.list_collection_names():
     ITEMS_REQUESTED = db["ITEMS_REQUESTED"]
+if not "TRANSACTIONS" in db.list_collection_names():
+    TRANSACTIONS = db["TRANSACTIONS"]
 
 
 def Average_Rating(user, new_rating):
@@ -120,7 +122,18 @@ class AddToCartHandler(webapp3.RequestHandler):
 class CheckoutHandler(webapp3.RequestHandler):   
     def processpayment(self):
         # get current user info
+        transaction = {
+                'buyer': buyer,
+                'sellers': sellers,
+                'price': price
+        }
+        # check previous transactions within X period of time
+        # promote/demote vip status
+        if user.isVIP:
+            price = 0.95 * price
         # charge credit card
+
+        TRANSACTIONS.insert_one(transaction)
         # continue shopping/back to home
         self.redirect('/')
       
@@ -155,8 +168,13 @@ class ItemListingRequestHandler(webapp3.RequestHandler):
 # Item Listing page
 class ItemDetailHandler(webapp3.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/item#detail.html')
+        template = jinja_environment.get_template('templates/ItemDetail.html')
         self.response.write(template.render())
+    def post(self): # add to cart
+        item = self.request.get('item')
+        # query db for item match
+        # parse for individual words
+        
         
 # Login
 class LoginHandler(webapp3.RequestHandler):
@@ -253,7 +271,11 @@ class RequestItemHandler(webapp3.RequestHandler):
         self.redirect('/confirmation')
 # Search/browse items filtered from database
 class SearchHandler(webapp3.RequestHandler):
+    def get(self):
+        # results page
+        print()
     def post(self):
+        # query for items by title, keywords
         search_query = self.request.get('search')
         
 # Other settings
@@ -281,6 +303,7 @@ class ViewSellerInfoHandler(webapp3.RequestHandler):
 class ViewTransactionsHandler(webapp3.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/transaction#history.html')
+        # pull info from table of transactions where buyer == user
         self.response.write(template.render())
 
 '''
@@ -316,12 +339,12 @@ class SUManageHandler(webapp3.RequestHandler):
 
 class GUAppSummaryHandler(webapp3.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/guapp#summary.html')
+        template = jinja_environment.get_template('templates/GuestUserApp.html')
         self.response.write(template.render())
     
 class GUAppDetailHandler(webapp3.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/guapp#detail.html')
+        template = jinja_environment.get_template('templates/GuestUserApplicant.html')
         self.response.write(template.render())
     def post(self):
         # TODO: post request for accept/reject
@@ -381,7 +404,7 @@ class MainHandler(webapp3.RequestHandler):
         self.response.write(template.render())
 
 app = webapp3.WSGIApplication([
-        ('/', MainHandler), #index.html
+        ('/', MainHandler), #index.html, homeGU.html
         ############################# GET ONLY
         ('/about', AboutHandler),
         ('/privacy', PrivacyHandler),
@@ -398,7 +421,6 @@ app = webapp3.WSGIApplication([
         ('/guapp#summary', GUAppSummaryHandler),
         ('/guapp#detail', GUAppDetailHandler),
         ('/itemapp', ItemListingAppHandler),
-#        ('/homeGU', HomeGUHandler),
         ('/login', LoginHandler),
         ('/#', LogoutHandler),
         ('/register', RegisterHandler),
