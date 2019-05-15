@@ -10,8 +10,6 @@ import gu
 import items
 # import wndDatabase
 
-import json
-
 # Handle web requests
 import jinja2
 import os
@@ -34,7 +32,6 @@ client = connect_db()
 db = client['wnbDatabase']
 
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
-
 
 '''
 ###############################################################################
@@ -85,9 +82,10 @@ class AccountEditHandler(webapp3.RequestHandler):
         self.response.write(template.render())
         
     def post(self):
+        username = self.request.get('username')
         name = self.request.get('name')
         email = self.request.get('email')
-        phone_number = self.request.get('phone_number')
+        phone_number = self.request.get('phone')
         address = self.request.get('address')
         credit_card = self.request.get('credit_card')
         
@@ -95,7 +93,19 @@ class AccountEditHandler(webapp3.RequestHandler):
         db.getUser()
         # TODO: update with new parameters in database
         
+                
+        # if approved then we will make an OU from this information
+        ou_update = {
+                'username': username,
+                'name': name,
+                'email': email,
+                'phone': phone_number,
+                'address': address,
+                'credit_card': credit_card
+        }
         
+        USERS_PENDING.update_one(ou_update)
+
         self.redirect('/account')
 
 # Add item to cart
@@ -123,7 +133,7 @@ class ConfirmationHandler(webapp3.RequestHandler):
 # Handler for submitting a listing to be approved by an SU.
 class ItemListingRequestHandler(webapp3.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/item#listing.html')
+        template = jinja_environment.get_template('templates/itemform.html')
         self.response.write(template.render())        
     def post(self):
         title = self.request.get('title')
@@ -158,13 +168,18 @@ class LoginHandler(webapp3.RequestHandler):
         password = self.request.get('password')
         
         # TODO: validate against db (auth)
-        if AUTH[email].password == password:
-            session.logged_in = True
+        db.authenticate(name=email,
+                        password=password,
+                        mechanism='SCRAM-SHA-1',
+                        source='AUTH')
+        
+#        if AUTH[email].password == password:
+#            session.logged_in = True
 
 # Logout 
 class LogoutHandler(webapp3.RequestHandler):
     def post(self):
-        session.logged_in = False
+        db.logout()
     
 # Add rating to item
 class RateItemHandler(webapp3.RequestHandler):
@@ -190,20 +205,25 @@ class RegisterHandler(webapp3.RequestHandler):
         template = jinja_environment.get_template('templates/register.html')
         self.response.write(template.render())
     def post(self):
+        username = self.request.get('username')
         name = self.request.get('name')
         email = self.request.get('email')
-        phone_number = self.request.get('phone_number')
+        phone_number = self.request.get('phone')
         address = self.request.get('address')
         credit_card = self.request.get('credit_card')
         # TODO: ensure that user is not in db, then add
-        data = {'name': name, 'email': email, 'phone_number': phone_number,
-                'address': address, 'credit_card': credit_card, 'signup': 'submit'}
-        
-        key = secrets.token_hex()
-        # TODO: check that key does not already exist in db
-                
+        data = {
+                'username': username,
+                'name': name,
+                'email': email,
+                'phone_number': phone_number,
+                'address': address,
+                'credit_card': credit_card,
+                'signup': 'submit'
+        }
         # if approved then we will make an OU from this information
         ou_applicant = {
+                'username': username,
                 'name': name,
                 'email': email,
                 'phone_number': phone_number,
@@ -212,9 +232,6 @@ class RegisterHandler(webapp3.RequestHandler):
         }
         
         USERS_PENDING.insert_one(ou_applicant)
-#        APPLICATIONS.update({key: ou_applicant})
-        
-#        ou_applicant_key = ou_applicant.put()
         requests.post('https://gjleong.github.io/eByMazon', data=data)
         self.redirect('/confirmation')
 
@@ -310,7 +327,7 @@ class GUAppDetailHandler(webapp3.RequestHandler):
         # TODO: post request for accept/reject
         print()
     
-class ItemListingRequestHandler(webapp3.RequestHandler):
+class ItemListingAppHandler(webapp3.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/itemapp#detail.html')
         self.response.write(template.render())
@@ -357,6 +374,9 @@ APP
 '''
 class MainHandler(webapp3.RequestHandler):
     def get(self):
+        # if not logged in
+        template = jinja_environment.get_template('templates/homeGU.html')
+        # else logged in
         template = jinja_environment.get_template('templates/index.html')
         self.response.write(template.render())
 
@@ -372,13 +392,15 @@ app = webapp3.WSGIApplication([
         ############################## GET & POST
         ('/account', AccountHandler),
         ('/account#edit', AccountEditHandler),
-         ('item#detail', ItemDetailHandler),
+        ('item#detail', ItemDetailHandler),
         ('/itemlisting#request', ItemListingRequestHandler),
         ('/cart', ViewCartHandler),
-        ('guapp#summary', GUAppSummaryHandler),
-        ('guapp#detail', GUAppDetailHandler),
+        ('/guapp#summary', GUAppSummaryHandler),
+        ('/guapp#detail', GUAppDetailHandler),
+        ('/itemapp', ItemListingAppHandler),
 #        ('/homeGU', HomeGUHandler),
         ('/login', LoginHandler),
+        ('/#', LogoutHandler),
         ('/register', RegisterHandler),
         ('/confirmation', ConfirmationHandler),
         ('/settings', SettingsHandler),
@@ -389,7 +411,7 @@ app = webapp3.WSGIApplication([
 #app.config['SERVER_NAME'] = domain
 
 def main():
-    httpserver.serve(app, host='127.0.0.1', port=10061)
+    httpserver.serve(app, host='127.0.0.1', port=1070)
     
 # we don't necessarily want to shut down the application
 def fin():
