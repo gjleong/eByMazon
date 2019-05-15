@@ -150,16 +150,22 @@
             <hr>
             
             <label for="title"><b>Title</b></label>
-            <input type="text" placeholder="Enter Title" name="title" style="margin-left:48px" required>
+            <input type="text" placeholder="Enter Title" id="title" name="title" style="margin-left:48px" required>
             <br>
             <label for="keywords"><b>Keywords</b></label>
-            <input type="text" placeholder="Separate words with ';' " name="email" width="50" required>
+            <input type="text" placeholder="Separate words with ';' " id="keywords" name="keywords" width="50" required>
             <br>
             
             <div class="Price Options">
               <label for="price"><b>Pick a Price Option: </b></label> <br>
-              <input type="radio" name="price" value="fixed"> Fixed Price <br>
-              <input type="radio" name="price" value="range"> Ranged Price <br>
+              Up for buy:
+              <input type = "radio" name = "price" value="buy" id = "buy" onclick= "analyze(this.id);"> 
+              <div id="buyin"></div>
+              <br>
+              Up for bid:
+              <input type = "radio" name = "price" value = "" id = "bid" onclick= "analyze(this.id);">
+              <p id="bidin"></p>
+              <br>
             </div>
             
             <br>
@@ -167,7 +173,7 @@
             <div class="Upload Image">
                 <label for="image"><b>Upload an Image</b></label>
                 <input type="file" name="image" accept="image/*">
-                <input type="submit" value="Submit">
+                <button type="submit" formmethod="post">Submit using POST</button>
             </div>
             <small>Currently, you can only upload one image file.</small>
             <br>
@@ -175,79 +181,41 @@
             By submitting this form you agree to our <a href="#Terms&Privacy" style="color:dodgerblue">Terms & Privacy</a>
             
             <div class="clearfix">
-                <button onclick="window.location.href = '/'" type="button" class="cancelbtn">Cancel</button>
+                <button id="clear">Clear</button>
                 <button onclick="window.location.href = '/confirmation'" type="submit" class="signupbtn">Sign Up</button>
             </div>        
         </form>
     </div>
 
+    <script>
+      function analyze(pay) {
+        if (pay == "buy") {
+          var price = prompt("What is the price of this item?", "Item's price");	
+          document.getElementById("buyin").innerHTML = "The price of your item is $" + price + " dollars";
+          document.getElementById("buy").value= price;
+          }
+        else {
+          var bid = prompt("At what price does this bid START?", "your bidding");
+          document.getElementById("bidin").innerHTML = "Your starting bid is at $" +  bid + " dollars";	
+          document.getElementById("bid").value= price;				
+        }
+      };
+
+      var clear = document.getElementById("clear");
+      clear.onclick = function(){
+        document.getElementById("title").value = "";
+        document.getElementById("keywords").value = "";
+        document.getElementById("buy").value = "";
+        document.getElementById("bid").value = "";
+      };
+
+    </script>
+
   </body>
 </html>
 
 
-<form action = "" method = "" >
-  <p><b>
-  Does this Item have a SET PRICE or is for TO BID</b></p>
-  
-  <b>Set Price:</b>
-  <input type = "radio" name = "yesorno" value="setPrice" id = "setPrice" onclick= "analyze(this.value);">
-  </br>
-  
-  <b> Bid: </b>
-  <input type = "radio" name = "yesorno" value = "" id = "bid" onclick= "analyze(this.value);">
-</form>  
 
-<div id = "pp"> </div></br>    <div id = "bb"> </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 
-      <script>
-    var titles  = [];
-    var names   = [];
-    var tickets = [];
-    var prices = [];
-    var titleInput  = document.getElementById("title");
-    var nameInput   = document.getElementById("name");
-    var ticketInput = document.getElementById("tickets");
-    var priceInput = document.getElementById("price");
-    var messageBox  = document.getElementById("display");
-    function insert ( ) {
-     titles.push( titleInput.value );
-     names.push( nameInput.value );
-     tickets.push( ticketInput.value );
-      
-     clearAndShow();
-    }
-    function clearAndShow () {
-      // Clear our fields
-      titleInput.value = "";
-      nameInput.value = "";
-      ticketInput.value = "";
-      
-      // Show our output
-      messageBox.innerHTML = "";
-      
-      messageBox.innerHTML += "<b> Title: </b>" + titles.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
-      messageBox.innerHTML += "<b> Keywords: </b>" + names.join(", ") + "<br/>"+ "<br/>"+ "<br/>";
-      messageBox.innerHTML += "<b> Item's Description: </b>" + tickets.join(", ")+ "<br>" + "<br/>"+ "<br/>";
-    }
-    //Radio Buttons conditional statements
-  
-    function analyze(pay) {
-      if (pay == "setPrice") {
-        var price = prompt("What is the price of this item?", "Item's price");	
-        document.getElementById("pp").innerHTML = The price of your item is $" + price + " dollars";
-        }
-      else {
-        var bid = prompt("At what price does this bid START?", "your bidding");
-          document.getElementById("bb").innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 Your starting bid is at $" +  bid + " dollars";					
-        }
-  
-      }
+
+    
