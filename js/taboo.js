@@ -5,7 +5,7 @@ function replaceWords(event) {
     event.preventDefault();
     var commentContent = document.getElementById('comments');
     console.log(commentContent.value);
-    var badWords = ["crap", "ugly", "brat" ,"basterddouch"];
+    var badWords = ["CCNY", "College", "work" ,"school"];
     console.log(commentContent.value);
     var censored = censore(commentContent.value, badWords);
     commentContent.value = censored;
