@@ -1,218 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Wine n' Buy</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      p {
-        margin-left: 50px;
-        font-size: 18px;
-      }
-
-      body{
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        background-image: url("img/background.png");
-      }
-
-      .home-bar{
-        background-color:#c0dbff8c;
-        padding-top: 5px;
-        padding-bottom: 10px;
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-
-      .nav-bar{
-        background-color: rgba(111, 0, 255, 0.267);
-        padding: 15px;
-      }
+    <script src="../js/register.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1>Wine n' Buy</h1>
+    <form onSubmit="confirmation" style="border:1px solid #ccc">
+      <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
         
-      .img-responsive {
-        width: 50px;
-        height: 50px;
-      }
-
-      .img-display{
-        margin-left: 50px;
-        width: 300px;
-        height: 300px;
-        padding: 50px;
-      }
-
-      .dropdown {
-        position:initial;
-        float: right;
-      }
-
-      .dropdown2{
-        position: initial;
-        float: left;
-      }
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
-        padding: 12px 16px;
-        z-index: 100;
-        right:0;
-      }
-
-      .dropdown-content2 {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
-        padding: 12px 16px;
-        z-index: 100;
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-
-      .dropdown2:hover .dropdown-content2 {
-        display: block;
-      }
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
         
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="phone"><b>Phone Number</b></label>
+        <input type="text" placeholder="Enter Phone Number" name="phone" required>
+    
+        <label for="address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" name="address" required>
+    
+        <label for="credit_card"><b>Credit Card</b></label>
+        <input type="password" placeholder="Enter Credit Card" name="credit_card" required>
 
-      .box{
-        background-color:rgb(255, 255, 255);
-        border: 1px solid rgba(111, 0, 255, 0.486);
-        margin: 35px;
-        padding: 10px;
-      }
-
-      #search{
-        width:850px;
-        margin-left: 150px;
-      }
-      input[type=text]{
-        width: 60%;
-      }
-      
-    </style>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <nav>
-      <div class="home-bar">
-        <a href="index.html"><img src="img/logo.png" style="width: 275px; height: 50px;" alt="logo" ></a>
-        <div class="dropdown">
-          <a href="#"><img src="img/avatar.png" class="img-responsive" alt="avatar"></a>
-          <div class="dropdown-content">
-            <li><a href="#Acct" >      Account Info    </a></li>
-            <li><a href="#ItemForm" >  New Item Form   </a></li>
-            <li><a href="#Settings">   Settings        </a></li>
-            <li><a href="#SignOut">    Sign Out        </a></li>
-          </div>
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+    
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+        <div class="clearfix">
+          <button formmethod="get" onclick="window.location.href = '/'" type="button" class="cancelbtn">Cancel</button>
+          <button formmethod="post" type="submit" name="signup" value="submit" class="signupbtn">Sign Up</button>
         </div>
       </div>
-        
-      <div class="nav-bar">
-        <div class="dropdown2">
-          <a href="#"><img src="img/category.png" class="img-responsive" alt="category"></a>
-          <div class="dropdown-content2">
-            <li><a href="#All" >      All Departments    </a></li>
-            <li><a href="#Cloth" >      Clothing         </a></li>
-            <li><a href="#Tech" >      Technology        </a></li>
-          </div>
-        </div>
-        <div class="search-container">
-          <form id="form1">
-            <input type="text" placeholder="Search.." name="search" id="search">
-            <button id="submit-button">Submit</button>
-          </form>
-          <script type="text/javascript">
-            document.getElementById("submit-button").onclick = function() {
-              document.getElementById("form1").submit();
-            }
-          </script>
-        </div>
-      </div>
-    </nav>
-    <div class="box">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
-      <label for="name"><b>Name</b></label> <br>
-      <input type="text" placeholder="Enter Name" id="name" name="name" required>
-      <br>
-      <label for="email"><b>Email</b></label> <br>
-      <input type="text" placeholder="Enter Email" id="email" name="email" required>
-      <br>
-      <label for="phone"><b>Phone Number</b></label> <br>
-      <input type="text" placeholder="Enter Phone Number" id="phone" name="phone" required>
-      <br>
-      <label for="address"><b>Address</b></label> <br>
-      <input type="text" placeholder="Enter Address" id="address" name="address" required>
-      <br>
-      <label for="credit_card"><b>Credit Card</b></label> <br>
-      <input type="text" placeholder="Enter Credit Card" id="credit" name="credit_card" required>
-      <br>
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-      <button id="clear">Clear</button>
-      <button id="submit">Sign Up</button>
-      <br>
-      <p>
-        Your Name is <span id="outputName">____</span>. The city in which you live is <span id="outputEmail">____</span>. 
-      </p>
-    </div>
-    <script>
-      var submit = document.getElementById("submit");
-      var clear = document.getElementById("clear");
+    </form>
 
-      submit.onclick = function(){
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var phone = document.getElementById("phone").value;
-        var address = document.getElementById("address").value;
-        var credit = document.getElementById("credit").value;
-        document.getElementById("outputName").innerText = name;
-        document.getElementById("outputEmail").innerText = email;
-
-        var user = '{ "name": ' + name +
-                  ', "email": ' + email +
-                  ', "phone": ' + phone +
-                  ', "address": ' + address +
-                  ', "credit": ' + credit + '}';
-        
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("address").value = "";
-        document.getElementById("credit").value = "";
-        
-        alert('Thank you for signing up. Check back soon for access.');
-        
-        
-        const fs = require('fs');
-        fs.writeFile("./test", user, function(err) {
-          if(err) {
-            return console.log(err);
-          }
-          console.log("The file was saved!");
-          return;
-        });
-      };
-
-      clear.onclick = function(){
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("address").value = "";
-        document.getElementById("credit").value = "";
-      };
-
-
-
-    </script>
-  </body>
+</body>
 </html>

@@ -8,38 +8,101 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            .home-bar{
-                background-color: rgba(111, 0, 255, 0.486);
+            p { 
+            margin-left: 50px;
+            font-size: 18px;
             }
+
+            body{
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            background-image: url("img/background.png");
+        
+            }
+
+            .home-bar{
+            background-color:#c0dbff8c;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+            }
+
             .nav-bar{
-                background-color: rgba(111, 0, 255, 0.267);
+            background-color: rgba(111, 0, 255, 0.267);
+            padding: 15px;
             }
             
             .img-responsive {
-                width: 40px;
-                height: 40px;
-                background-position: center center;
-                vertical-align: middle;
+            width: 50px;
+            height: 50px;
             }
+
+            .img-display{
+            margin-left: 50px;
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            }
+
             .dropdown {
-                position: relative;
-                display: inline-block;
-                
+            position:initial;
+            float: right;
             }
+
+            .dropdown2{
+            position: initial;
+            float: left;
+            }
+
             .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f9f9f9;
-                min-width: 160px;
-                box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
-                padding: 12px 16px;
-                z-index: 1;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 100;
+            right:0;
             }
+
+            .dropdown-content2 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 100;
+            }
+
             .dropdown:hover .dropdown-content {
-                display: block;
+            display: block;
+            }
+
+            .dropdown2:hover .dropdown-content2 {
+            display: block;
             }
             
-            
+
+            .box{
+            background-color:rgb(255, 255, 255);
+            border: 2px solid rgba(16, 0, 85, 0.705); 
+            margin: 35px;
+            padding: 10px;
+            }
+
+            #search{
+            width:850px;
+            margin-left: 125px;
+            }
+
+            input[type=text]{
+                width: 60%;
+                margin-left: 10px;
+            }
+                
+                
+                
         </style>
 
     <meta charset="utf-8">
@@ -47,56 +110,69 @@
 </head>
 <body>
 
-    <div class="home-bar">
-        
-        <div class="dropdown">
-            <a href="#"><img src="img/avatar.png" class="img-responsive" alt="avatar"></a>
-            <div class="dropdown-content">
-                <li><a href="#Acct" >      Account Info    </a></li>
-                <li><a href="#ItemForm" >  New Item Form   </a></li>
-                <li><a href="#Settings">   Settings        </a></li>
-                <li><a href="#SignOut">    Sign Out        </a></li>
+    <nav>
+        <div class="home-bar">
+                <a href="/"><img src="img/logo.png" style="width: 275px; height: 50px;" alt="logo" ></a>
+                <div class="dropdown">
+                <a ><img src="img/avatar.png" style="width: 50px; height: 50px;" alt="avatar"></a>
+                <div class="dropdown-content">
+                    <li><a href="/account" >      Account Info    </a></li>
+                    <li><a href="/itemlisting#request" >  New Item Form   </a></li>
+                    <li><a href="/settings">   Settings        </a></li>
+                    <li><a href="/#">    Sign Out        </a></li>
+                </div>
+                </div>
             </div>
-        </div>
-        
-        <a href="#"><img src="img/logo.jpg" class="img-responsive" alt="logo" align="right"></a>
-        <center><font size="6" face="Georgia">WINE N BUY</font></center>
-
-    </div>
-
-    <div class="nav-bar">
-        
-        <div class="dropdown">
-            <a href="#"><img src="img/category.png" class="img-responsive" alt="category"></a>
-            <div class="dropdown-content">
-                <li><a href="#All" >      All Departments    </a></li>
-                <li><a href="#Cloth" >      Clothing         </a></li>
-                <li><a href="#Tech" >      Technology        </a></li>
-            </div>
-        </div>
-
-        <div class="search-container">
-            <form id="form1">
-                <input type="text" placeholder="Search.." name="search">
-                <button id="submit-button">Submit</button>
-            </form>
-            
-            <script type="text/javascript">
-                document.getElementById("submit-button").onclick = function() {
+                
+            <div class="nav-bar">
+                <div class="dropdown2">
+                <a><img src="img/category.png" style="width: 30px; height: 30px;" alt="category"></a>
+                <div class="dropdown-content2">
+                    <li><a href="#All" >      All Departments    </a></li>
+                    <li><a href="#Cloth" >      Clothing         </a></li>
+                    <li><a href="#Tech" >      Technology        </a></li>
+                </div>
+                </div>
+                <div class="search-container">
+                <form id="form1">
+                    <input type="text" placeholder="Search.." name="search" id="search">
+                    <button id="submit-button"> Submit </button>
+                </form>
+                <script type="text/javascript">
+                    document.getElementById("submit-button").onclick = function() {
                     document.getElementById("form1").submit();
-                }
-            </script>
+                    }
+                </script>
+            </div>
         </div>
+    </nav>
+
+    
+    <section>
+        <div class="box">
+            <p>Most Popular Items Listed</p>
+            <div id="images">
+                <a href="#tech/comp1"><img src="img/comp1.jpg" class="img-display" alt="tech"></a>
+                <a href="#tech/comp2"><img src="img/comp2.jpg" class="img-display" alt="tech"></a>
+                <a href="#tech/comp3"><img src="img/comp3.jpg" class="img-display" alt="tech"></a>  
+            </div>
+        </div>
+        
+        <div class="box">
+            <p>Top Rated VIP Sellers</p>
+            <div id="images">
+                    <a href="#OU/seller1"><img src="img/avatar.png" class="img-display" alt="seller"></a>
+                    <a href="#OU/seller2"><img src="img/avatar.png" class="img-display" alt="seller"></a>
+                    <a href="#OU/seller3"><img src="img/avatar.png" class="img-display" alt="seller"></a>
+            </div>
+        </div>
+        
+    </section>
 
 
-    </div>
-
-   
-
-       
 
     <div class="clearfix">
-      <button onclick="window.location.href = 'register'" type="button" class="registerbtn">Sign Up</button>
+      <button onclick="window.location.href = '/register'" type="button" class="registerbtn">Sign Up</button>
     </div>
 
 

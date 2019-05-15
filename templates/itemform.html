@@ -143,29 +143,23 @@
     </nav>
     
     <div class="box">
-        <form style="border:1px solid #ccc; padding: 10px;" >
+        <form action="action_page.php" style="border:1px solid #ccc; padding: 10px;" >
         
             <h1>Request to Sell a New Item</h1>
             <p>Please fill in this form to create a new listing.</p>
             <hr>
             
             <label for="title"><b>Title</b></label>
-            <input type="text" placeholder="Enter Title" id="title" name="title" style="margin-left:48px" required>
+            <input type="text" placeholder="Enter Title" name="title" style="margin-left:48px" required>
             <br>
             <label for="keywords"><b>Keywords</b></label>
-            <input type="text" placeholder="Separate words with ';' " id="keywords" name="keywords" width="50" required>
+            <input type="text" placeholder="Separate words with ';' " name="email" width="50" required>
             <br>
             
             <div class="Price Options">
               <label for="price"><b>Pick a Price Option: </b></label> <br>
-              Up for buy:
-              <input type = "radio" name = "price" value="buy" id = "buy" onclick= "analyze(this.id);"> 
-              <div id="buyin"></div>
-              <br>
-              Up for bid:
-              <input type = "radio" name = "price" value = "" id = "bid" onclick= "analyze(this.id);">
-              <p id="bidin"></p>
-              <br>
+              <input type="radio" name="price" value="fixed"> Fixed Price <br>
+              <input type="radio" name="price" value="range"> Ranged Price <br>
             </div>
             
             <br>
@@ -173,7 +167,7 @@
             <div class="Upload Image">
                 <label for="image"><b>Upload an Image</b></label>
                 <input type="file" name="image" accept="image/*">
-                <button type="submit" formmethod="post">Submit using POST</button>
+                <input type="submit" value="Submit">
             </div>
             <small>Currently, you can only upload one image file.</small>
             <br>
@@ -181,41 +175,11 @@
             By submitting this form you agree to our <a href="#Terms&Privacy" style="color:dodgerblue">Terms & Privacy</a>
             
             <div class="clearfix">
-                <button id="clear">Clear</button>
+                <button onclick="window.location.href = '/'" type="button" class="cancelbtn">Cancel</button>
                 <button onclick="window.location.href = '/confirmation'" type="submit" class="signupbtn">Sign Up</button>
             </div>        
         </form>
     </div>
 
-    <script>
-      function analyze(pay) {
-        if (pay == "buy") {
-          var price = prompt("What is the price of this item?", "Item's price");	
-          document.getElementById("buyin").innerHTML = "The price of your item is $" + price + " dollars";
-          document.getElementById("buy").value= price;
-          }
-        else {
-          var bid = prompt("At what price does this bid START?", "your bidding");
-          document.getElementById("bidin").innerHTML = "Your starting bid is at $" +  bid + " dollars";	
-          document.getElementById("bid").value= price;				
-        }
-      };
-
-      var clear = document.getElementById("clear");
-      clear.onclick = function(){
-        document.getElementById("title").value = "";
-        document.getElementById("keywords").value = "";
-        document.getElementById("buy").value = "";
-        document.getElementById("bid").value = "";
-      };
-
-    </script>
-
   </body>
 </html>
-
-
-
-
-
-    
